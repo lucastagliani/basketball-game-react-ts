@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "type-check": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
