@@ -14,6 +14,7 @@ module.exports = {
     '@typescript-eslint/semi': ['error', 'never'],
     'unused-imports': 0,
     'no-unused-vars': 0,
+    'max-len': 2,
   },
   overrides: [
     {
