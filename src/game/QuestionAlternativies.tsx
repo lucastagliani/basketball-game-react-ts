@@ -9,7 +9,7 @@ type Alternative = {
 const QuestionAlternativies = (props: any) => {
   const { alternativies } = props
   return (
-    <div>
+    <div className="question-alternativies">
       {
         // eslint-disable-next-line max-len
         alternativies.map((item: Alternative) => <QuestionAlternative answerId={item.key} answerText={item.value} />)

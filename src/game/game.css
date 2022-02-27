@@ -1,3 +1,15 @@
 .player-image {
   height: 400px;
 }
+
+.question-alternativies {
+  width: 400px;
+  margin: auto;
+  flex-direction: row;
+}
+
+.question-alternative {
+  justify-content: center;
+  width: 180px;
+  margin: 10px;
+}
