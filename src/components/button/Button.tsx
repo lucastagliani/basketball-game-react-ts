@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 interface ButtonProps {
   text: string
-  overrideStyles?: Object
+  value: string
+  className?: string
+  overrideStyles?: CSSProperties
   onButtonClick: (event: any) => {}
 }
 
-const defaultStyles = {
-  padding: '1rem',
+const defaultStyles: CSSProperties = {
+  backgroundColor: '#4CAF50',
+  border: 'none',
+  color: 'white',
+  padding: '15px 32px',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '16px',
 }
 
-const Button = ({ text, overrideStyles = {}, onButtonClick }: ButtonProps) => {
+const Button = ({
+  text, value, className = '', overrideStyles = {}, onButtonClick,
+}: ButtonProps) => {
   const style = {
     ...defaultStyles,
     ...overrideStyles,
   }
   return (
-    <button type="button" onClick={onButtonClick} style={style}>{text}</button>
+    <button type="button" value={value} className={className} onClick={onButtonClick} style={style}>{text}</button>
   )
 }
 
