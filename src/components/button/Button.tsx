@@ -5,18 +5,24 @@ interface ButtonProps {
   value: string
   className?: string
   overrideStyles?: CSSProperties
-  onButtonClick: (event: any) => {}
+  onButtonClick: (event?: any) => any
 }
 
-const defaultStyles: CSSProperties = {
-  backgroundColor: '#4CAF50',
-  border: 'none',
-  color: 'white',
+const defaultStyles: any = {
+  backgroundColor: 'white',
+  border: '2px solid #555',
+  color: 'black',
   padding: '15px 32px',
   textAlign: 'center',
   textDecoration: 'none',
   display: 'inline-block',
   fontSize: '16px',
+  margin: '4px',
+  transitionDuration: '0.4s',
+  '&:hover': {
+    backgroundColor: 'red',
+    color: 'white',
+  },
 }
 
 const Button = ({
