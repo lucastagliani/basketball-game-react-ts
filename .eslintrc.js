@@ -15,6 +15,8 @@ module.exports = {
     'unused-imports': 0,
     'no-unused-vars': 0,
     'max-len': 2,
+    'react/jsx-props-no-spreading': 0,
+    'react/require-default-props': 0,
   },
   overrides: [
     {
