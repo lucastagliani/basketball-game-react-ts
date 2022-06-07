@@ -10,6 +10,7 @@ describe('<Button />', () => {
 
   const defaultProps = {
     text: 'I am a button',
+    value: '123',
     onButtonClick: onButtonClickSpy,
   }
   it('should render a button with a text', () => {
