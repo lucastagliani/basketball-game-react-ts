@@ -1,12 +1,6 @@
 module.exports = {
   root: true,
-  extends: [
-    'eslint:recommended',
-    'react-app',
-    'react-app/jest',
-    'airbnb',
-    'airbnb-typescript',
-  ],
+  extends: ['eslint:recommended', 'airbnb', 'airbnb-typescript'],
   parserOptions: {
     project: './tsconfig.json',
   },
