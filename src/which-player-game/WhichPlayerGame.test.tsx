@@ -10,7 +10,7 @@ describe('<WhichPlayerGame />', () => {
 
   it('should render a player picture', () => {
     render(<WhichPlayerGame />)
-    expect(screen.getByRole('img', { name: 'Player' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'player' })).toBeInTheDocument()
   })
 
   it('should render 4 possible answers', () => {

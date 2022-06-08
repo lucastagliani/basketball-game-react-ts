@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint": "eslint --resolve-plugins-relative-to .",
     "lint:fix": "npm run lint -- --fix",
     "type-check": "tsc --noEmit",
     "prepare": "husky install"
@@ -47,12 +47,13 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.1.4",
     "husky": "^7.0.2",
+    "jest-watch-typeahead": "^0.6.5",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0"
   },
