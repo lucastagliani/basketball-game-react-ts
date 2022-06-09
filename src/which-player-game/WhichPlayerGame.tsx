@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../components/button/Button'
+import Button from '../core-components/button/Button'
 import PlayerImage from './PlayerImage'
 
 const WhichPlayerGame = () => {
