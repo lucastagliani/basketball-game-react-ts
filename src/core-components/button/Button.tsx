@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useState } from 'react'
 
 interface ButtonProps {
   text: string
@@ -8,7 +8,7 @@ interface ButtonProps {
   onButtonClick: (event?: any) => any
 }
 
-const defaultStyles: any = {
+const defaultStyle: CSSProperties = {
   backgroundColor: 'white',
   border: '2px solid #555',
   color: 'black',
@@ -19,21 +19,29 @@ const defaultStyles: any = {
   fontSize: '16px',
   margin: '4px',
   transitionDuration: '0.4s',
-  '&:hover': {
-    backgroundColor: 'red',
-    color: 'white',
-  },
+}
+
+const hoverStyle: CSSProperties = {
+  backgroundColor: '#555',
+  color: 'white',
 }
 
 const Button = ({
   text, value, className = '', overrideStyles = {}, onButtonClick,
 }: ButtonProps) => {
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleOnMouseIn = () => setIsHovered(true)
+  const handleOnMouseOut = () => setIsHovered(false)
+
   const style = {
-    ...defaultStyles,
+    ...defaultStyle,
     ...overrideStyles,
+    ...(isHovered && hoverStyle),
   }
+
   return (
-    <button type="button" value={value} className={className} onClick={onButtonClick} style={style}>{text}</button>
+    <button type="button" value={value} className={className} onClick={onButtonClick} style={style} onMouseEnter={handleOnMouseIn} onMouseLeave={handleOnMouseOut}>{text}</button>
   )
 }
 
