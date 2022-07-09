@@ -6,7 +6,7 @@ const getPlayerImage = (options?: ByRoleOptions): HTMLElement => screen.getByRol
 
 const defaultProps = {
   altText: 'player image',
-  playerId: '123',
+  playerId: 123,
 
 }
 

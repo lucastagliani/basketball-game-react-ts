@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react'
 
 type PlayerImageProps = {
   altText: string
-  playerId: string,
+  playerId: number,
   className?: string
   overrideStyles?: CSSProperties
 }
