@@ -28,7 +28,7 @@ const hoverStyle: CSSProperties = {
 
 const Button = ({
   text, value, className = '', overrideStyles = {}, onButtonClick,
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleOnMouseIn = () => setIsHovered(true)
