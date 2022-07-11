@@ -28,7 +28,7 @@ const WhichPlayerGame = (): JSX.Element => {
       setTimeout(() => {
         setRightAnswer(data.correctAnswerKey)
         setAlternativies(data.alternativeOptions)
-      }, 3000)
+      }, 1000)
     }
   }
 
