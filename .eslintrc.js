@@ -1,25 +1,26 @@
 module.exports = {
-  root: true,
-  extends: ['eslint:recommended', 'airbnb', 'airbnb-typescript'],
-  parserOptions: {
-    project: './tsconfig.json',
+  env: {
+    browser: true,
+    es2021: true,
   },
-  rules: {
-    semi: ['error', 'never'],
-    '@typescript-eslint/semi': ['error', 'never'],
-    'unused-imports': 0,
-    'no-unused-vars': 0,
-    'max-len': 2,
-    'react/jsx-props-no-spreading': 0,
-    'react/require-default-props': 0,
-  },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parserOptions: {
-        project: ['./tsconfig.json'],
-      },
-    },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
-  parser: '@typescript-eslint/parser',
-}
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "@typescript-eslint"],
+  rules: {
+    indent: ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    quotes: ["error", "single"],
+    semi: ["error", "never"],
+  },
+};

@@ -6,13 +6,12 @@ type Alternative = {
   value: string
 }
 
-const QuestionAlternativies = (props: any) => {
-  const { alternativies } = props
+const QuestionAlternativies = ({alternativies}: { alternativies: Alternative[] }): JSX.Element => {
   return (
     <div className="question-alternativies">
       {
         // eslint-disable-next-line max-len
-        alternativies.map((item: Alternative) => <QuestionAlternative answerId={item.key} answerText={item.value} />)
+        alternativies.map((item: Alternative) => <QuestionAlternative key={item.key} answerId={item.key} answerText={item.value} />)
       }
 
     </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 
-const QuestionAlternative = (props: any) => {
-  const { answerId, answerText } = props
+const QuestionAlternative = ({answerId, answerText}: {answerId: number, answerText: string}): JSX.Element => {
   return (<button type="button" className="question-alternative" value={answerId.toString()}>{answerText}</button>)
 }
 
