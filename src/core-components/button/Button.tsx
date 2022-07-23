@@ -24,11 +24,15 @@ const defaultStyle: CSSProperties = {
 const hoverStyle: CSSProperties = {
   backgroundColor: '#555',
   color: 'white',
-  cursor: 'pointer'
+  cursor: 'pointer',
 }
 
 const Button = ({
-  text, value, className = '', overrideStyles = {}, onButtonClick,
+  text,
+  value,
+  className = '',
+  overrideStyles = {},
+  onButtonClick,
 }: ButtonProps): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -42,7 +46,16 @@ const Button = ({
   }
 
   return (
-    <button type="button" value={value} className={className} onClick={onButtonClick} style={style} onMouseEnter={handleOnMouseIn} onMouseLeave={handleOnMouseOut}>{text}</button>
+    <button
+      type="button"
+      value={value}
+      className={className}
+      onClick={onButtonClick}
+      style={style}
+      onMouseEnter={handleOnMouseIn}
+      onMouseLeave={handleOnMouseOut}>
+      {text}
+    </button>
   )
 }
 

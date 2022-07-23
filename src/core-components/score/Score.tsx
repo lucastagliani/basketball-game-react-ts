@@ -12,19 +12,19 @@ type ScoreProps = {
 const defaultContainerStyles: CSSProperties = {
   padding: '1rem',
   fontSize: '2rem',
-  color: '#333'
+  color: '#333',
 }
 
 const Score = ({
-  attempts, 
-  correct, 
-  textBeforeScore = '', 
-  scoreStyles, 
-  textStyles, 
-  containerStyles
+  attempts,
+  correct,
+  textBeforeScore = '',
+  scoreStyles,
+  textStyles,
+  containerStyles,
 }: ScoreProps): JSX.Element => {
   return (
-    <div style={{...defaultContainerStyles, ...containerStyles}}>
+    <div style={{ ...defaultContainerStyles, ...containerStyles }}>
       {textBeforeScore && <span style={textStyles}>{`${textBeforeScore} `}</span>}
       <span style={scoreStyles}>{`${correct} / ${attempts}`}</span>
     </div>

@@ -39,9 +39,9 @@ describe('<Button />', () => {
   it('should change color and bgColor when hovered', () => {
     render(<Button {...defaultProps} />)
     userEvent.hover(getButton())
-    expect(getButton()).toHaveStyle({ 
+    expect(getButton()).toHaveStyle({
       'background-color': '#555',
-      color: 'white'
+      color: 'white',
     })
   })
 })
