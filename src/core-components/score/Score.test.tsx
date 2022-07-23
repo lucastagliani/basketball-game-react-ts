@@ -2,8 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Score from './Score'
 
-
-describe('<Score />', () => {  
+describe('<Score />', () => {
   it('should render 2 / 3 when 3 attempts and 2 correct', () => {
     render(<Score attempts={3} correct={2} />)
     expect(screen.getByText('2 / 3')).toBeInTheDocument()
@@ -16,12 +15,12 @@ describe('<Score />', () => {
     expect(scoreElement.parentElement).toHaveStyle({
       padding: '1rem',
       fontSize: '2rem',
-      color: '#333'
+      color: '#333',
     })
   })
 
   it('should render text before score when provided', () => {
-    render(<Score attempts={3} correct={2} textBeforeScore='Score: '/>)
+    render(<Score attempts={3} correct={2} textBeforeScore="Score: " />)
     expect(screen.getByText('Score:')).toBeInTheDocument()
   })
 
@@ -31,10 +30,10 @@ describe('<Score />', () => {
       correct: 0,
       textBeforeScore: 'Your score is: ',
       containerStyles: {
-        border: '1px solid gold'
+        border: '1px solid gold',
       },
       textStyles: {
-        color: '#000'
+        color: '#000',
       },
       scoreStyles: {
         fontSize: '16px',
@@ -45,9 +44,11 @@ describe('<Score />', () => {
 
     const textElement = screen.getByText('Your score is:')
     const scoreElement = screen.getByText('0 / 1')
-    
-    expect(textElement).toHaveStyle({color: '#000'})
-    expect(scoreElement).toHaveStyle({'font-size': '16px'})
-    expect(scoreElement.parentElement).toHaveStyle({'border':'1px solid gold'})
+
+    expect(textElement).toHaveStyle({ color: '#000' })
+    expect(scoreElement).toHaveStyle({ 'font-size': '16px' })
+    expect(scoreElement.parentElement).toHaveStyle({
+      border: '1px solid gold',
+    })
   })
 })

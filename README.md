@@ -1,7 +1,5 @@
 [![CircleCI](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main.svg?style=svg)](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main)
 
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

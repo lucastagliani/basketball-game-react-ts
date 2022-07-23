@@ -52,10 +52,14 @@ const WhichPlayerGame = (): JSX.Element => {
   return (
     <div id="which-player-game">
       <h1>Which basketball player is this?</h1>
-      <Score attempts={totalAttempts} correct={correctAttempts} textBeforeScore={'Your current score is:'}/>
+      <Score
+        attempts={totalAttempts}
+        correct={correctAttempts}
+        textBeforeScore={'Your current score is:'}
+      />
       <PlayerImage altText="player" playerId={correctAnswer} />
       <div>
-        {alternativies.map((alternative) => {
+        {alternativies.map(alternative => {
           return (
             <Button
               key={alternative.key}
