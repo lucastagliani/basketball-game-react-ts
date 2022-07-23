@@ -25,7 +25,7 @@ const Score = ({
 }: ScoreProps): JSX.Element => {
   return (
     <div style={{...defaultContainerStyles, ...containerStyles}}>
-      {textBeforeScore && <span style={textStyles}>{textBeforeScore}</span>}
+      {textBeforeScore && <span style={textStyles}>{`${textBeforeScore} `}</span>}
       <span style={scoreStyles}>{`${correct} / ${attempts}`}</span>
     </div>
   )

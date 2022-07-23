@@ -24,6 +24,7 @@ const defaultStyle: CSSProperties = {
 const hoverStyle: CSSProperties = {
   backgroundColor: '#555',
   color: 'white',
+  cursor: 'pointer'
 }
 
 const Button = ({
