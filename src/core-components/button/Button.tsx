@@ -5,7 +5,7 @@ interface ButtonProps {
   value: string
   className?: string
   overrideStyles?: CSSProperties
-  onButtonClick: (event?: any) => any
+  onButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const defaultStyle: CSSProperties = {
