@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -54,8 +55,9 @@
     ]
   },
   "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
     "*.{js,jsx,ts,tsx}": "eslint --fix",
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{ts,tsx}": "tsc --noEmit",
+    "*.js": "eslint --cache --fix"
   }
 }
