@@ -26,7 +26,7 @@ const Score = ({
   return (
     <div style={{ ...defaultContainerStyles, ...containerStyles }}>
       {textBeforeScore && <span style={textStyles}>{`${textBeforeScore} `}</span>}
-      <span style={scoreStyles}>{`${correct} / ${attempts}`}</span>
+      <span aria-label="score" style={scoreStyles}>{`${correct} / ${attempts}`}</span>
     </div>
   )
 }
