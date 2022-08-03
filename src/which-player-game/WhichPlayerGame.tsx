@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import useSound from 'use-sound'
 import Button from '../core-components/button/Button'
 import Score from '../core-components/score/Score'
 import PlayerImage from './PlayerImage'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
+import basketballSwish from './sounds/basketball-swish.mp3'
+import basketballRim from './sounds/basketball-rim.mp3'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
 }
 
 const WhichPlayerGame = (): JSX.Element => {
+  const [playRightAnswerSound] = useSound(basketballSwish)
+  const [playWrongAnswerSound] = useSound(basketballRim)
   const { getNewQuestion } = useQuestionApi()
   const [correctAttempts, setCorrectAttempts] = useState(0)
   const [totalAttempts, setTotalAttempts] = useState(0)
@@ -43,7 +48,10 @@ const WhichPlayerGame = (): JSX.Element => {
     setTotalAttempts(totalAttempts + 1)
 
     if (userAnswer === correctAnswer) {
+      playRightAnswerSound()
       setCorrectAttempts(correctAttempts + 1)
+    } else {
+      playWrongAnswerSound()
     }
 
     updateQuestionDisplayed()
