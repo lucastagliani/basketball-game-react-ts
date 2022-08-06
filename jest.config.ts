@@ -8,7 +8,7 @@ export default {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   moduleNameMapper: {
-    '\\.(css|less|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less|svg|mp3)$': '<rootDir>/__mocks__/fileMock.js',
   },
   preset: 'ts-jest',
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
