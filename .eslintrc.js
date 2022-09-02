@@ -24,4 +24,9 @@ module.exports = {
     semi: ['error', 'never'],
     'max-len': ['error', { code: 100 }],
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }
