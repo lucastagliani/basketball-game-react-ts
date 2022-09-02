@@ -7,6 +7,7 @@ import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/basketball-rim.mp3'
+import Timer from '../core-components/timer/Timer'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -20,6 +21,7 @@ const WhichPlayerGame = (): JSX.Element => {
   const [totalAttempts, setTotalAttempts] = useState(0)
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
   const [correctAnswer, setCorrectAnswer] = useState(-1)
+  const [isRunning, setIsRunning] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +45,10 @@ const WhichPlayerGame = (): JSX.Element => {
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
+    if (!isRunning) {
+      setIsRunning(true)
+    }
+    
     const userAnswer = getUserAnswerFromEvent(event)
 
     setTotalAttempts(totalAttempts + 1)
@@ -65,6 +71,7 @@ const WhichPlayerGame = (): JSX.Element => {
         correct={correctAttempts}
         textBeforeScore={'Your current score is:'}
       />
+      <Timer isRunning={isRunning} />
       <PlayerImage altText="player" playerId={correctAnswer} />
       <div>
         {alternativies.map(alternative => {
