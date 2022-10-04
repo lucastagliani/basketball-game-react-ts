@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import useSound from 'use-sound'
-import Button from '../core-components/button/Button'
 import Score from '../core-components/score/Score'
-import PlayerImage from './PlayerImage'
+import PlayerImage from './PlayerImage/PlayerImage'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/basketball-rim.mp3'
 import Timer from '../core-components/timer/Timer'
+import AnswerOptions from './AnswerOptions/AnswerOptions'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -73,18 +73,7 @@ const WhichPlayerGame = (): JSX.Element => {
       />
       <Timer isRunning={isTimerRunning} />
       <PlayerImage altText="player" playerId={correctAnswer} />
-      <div>
-        {alternativies.map(alternative => {
-          return (
-            <Button
-              key={alternative.key}
-              value={alternative.key.toString()}
-              text={alternative.value.toString()}
-              onButtonClick={handleOnClick}
-            />
-          )
-        })}
-      </div>
+      <AnswerOptions alternativies={alternativies} onAnswerClick={handleOnClick} />
     </div>
   )
 }
