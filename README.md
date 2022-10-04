@@ -1,12 +1,24 @@
 [![CircleCI](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main.svg?style=svg)](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main)
 
-# Getting Started with Create React App
+# nba-info-react-ts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live website in Heroku
 
-https://nba-info-react-ts.herokuapp.com/
+https://nba-info-react-ts.herokuapp.com/ (it might be offline after November 28th given Heroku free plan will no longer exist).
+
+## Motivation
+
+I love coding and I love sports - mainly basketball and soccer. My idea with this project was to do 2-3 commits per week. It will evolve slowly but nicely.
+
+## Disclaimer
+
+This personal project was created for fun, it might not use the best tools or practices considered by me, but I use some of them for practicing and learning.
+
+## API
+
+The API attached to this front-end applications is here: [nba-api-nodejs](https://github.com/lucastagliani/nba-api-nodejs)
 
 ## Available Scripts
 
@@ -20,7 +32,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+You don't need to run the API locally because it will hit the production one.
+
+### `npm run start:local-api`
+
+The same as `npm start`, but now it will look for the local API under `http://localhost:8080`.
+
+If that is your wish you will need to clone, install and run the below project to make it work!
+
+[nba-api-nodejs](https://github.com/lucastagliani/nba-api-nodejs)
+
 ### `npm test`
+
+Uses jest to run all unit tests.
+
+### `npm run test:watch`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -34,6 +60,14 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run lint`
+
+It shows up all code lines (if any) that are out of pattern based on eslint rules.
+
+### `npm run lint:fix`
+
+Same as the above, but it tries to fix them automatically before displaying it.
 
 ## Learn More
 
