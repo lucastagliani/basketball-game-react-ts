@@ -1,9 +1,14 @@
 import React from 'react'
-import logo from '../logo-nba.svg'
+import background from './basketball-at-court.png'
+
+const imageStyle = {
+  maxWidth: '100%',
+  opacity: 0.8
+}
 
 const Header = () => (
   <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
+    <img src={background} style={imageStyle}/>
   </header>
 )
 
