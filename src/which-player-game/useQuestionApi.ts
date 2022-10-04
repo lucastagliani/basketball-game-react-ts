@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { Question } from './types'
 
-const BASE_URL = process.env.IS_LOCAL
-  ? 'http://localhost:8080'
-  : 'https://nba-api-nodejs.herokuapp.com'
+const BASE_URL =
+  process.env.REACT_APP_NODE_ENV === 'production'
+    ? 'https://nba-api-nodejs.herokuapp.com'
+    : 'http://localhost:8080'
 
 const useQuestionApi = () => {
   const endpoint = '/questions'
