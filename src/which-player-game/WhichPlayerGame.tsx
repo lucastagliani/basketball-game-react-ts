@@ -21,7 +21,7 @@ const WhichPlayerGame = (): JSX.Element => {
   const [totalAttempts, setTotalAttempts] = useState(0)
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
   const [correctAnswer, setCorrectAnswer] = useState(-1)
-  const [isRunning, setIsRunning] = useState(false)
+  const [isTimerRunning, setIsTimerRunning] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,8 +45,8 @@ const WhichPlayerGame = (): JSX.Element => {
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
-    if (!isRunning) {
-      setIsRunning(true)
+    if (!isTimerRunning) {
+      setIsTimerRunning(true)
     }
     
     const userAnswer = getUserAnswerFromEvent(event)
@@ -65,13 +65,13 @@ const WhichPlayerGame = (): JSX.Element => {
 
   return (
     <div id="which-player-game">
-      <h1>Which basketball player is this?</h1>
+      <h1>What is the name of the player below?</h1>
       <Score
         attempts={totalAttempts}
         correct={correctAttempts}
         textBeforeScore={'Your current score is:'}
       />
-      <Timer isRunning={isRunning} />
+      <Timer isRunning={isTimerRunning} />
       <PlayerImage altText="player" playerId={correctAnswer} />
       <div>
         {alternativies.map(alternative => {

@@ -27,6 +27,10 @@ const PlayerImage = ({ playerId, altText, className, overrideStyles }: PlayerIma
     ...overrideStyles,
   }
 
+  if (!playerId) {
+    return null
+  }
+
   return (
     <img
       alt={altText}

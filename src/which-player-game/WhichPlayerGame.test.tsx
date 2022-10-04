@@ -20,7 +20,7 @@ describe('<WhichPlayerGame />', () => {
   it('should render a game title', async () => {
     render(<WhichPlayerGame />)
     const gameTitle = screen.getByRole('heading', {
-      name: 'Which basketball player is this?',
+      name: 'What is the name of the player below?',
     })
     await waitFor(() => {
       expect(gameTitle).toBeInTheDocument()

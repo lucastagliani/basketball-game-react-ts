@@ -1,15 +1,42 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 
+enum Unit {
+  Minute,
+  Second,
+  Milisecond
+}
+
 type TimerProps = {
   isRunning?: boolean
   initialTime?: number
 }
 
+const unitsParameters = {
+  [Unit.Minute]: {
+    divisor: 60000, 
+    modulo: 60
+  },
+  [Unit.Second]: {
+    divisor: 1000, 
+    modulo: 60
+  },
+  [Unit.Milisecond]: {
+    divisor: 10, 
+    modulo: 100
+  },
+}
+
+const formatTimeUnit = (time: number, unit: Unit) => {
+  const {divisor, modulo} = unitsParameters[unit]
+  const unitTimeAmount = (time / divisor) % modulo
+  return ('0' + Math.floor(unitTimeAmount)).slice(-2)
+}
+
 const getTimeToDisplay = (time: number) => {
-  const minutesToDisplay = ('0' + Math.floor((time / 60000) % 60)).slice(-2)
-  const secondsToDisplay = ('0' + Math.floor((time / 1000) % 60)).slice(-2)
-  const milisecondsToDisplay = ((time / 10) % 100).toString()
+  const minutesToDisplay = formatTimeUnit(time, Unit.Minute)
+  const secondsToDisplay = formatTimeUnit(time, Unit.Second)
+  const milisecondsToDisplay = formatTimeUnit(time, Unit.Milisecond)
 
   return { minutesToDisplay, secondsToDisplay, milisecondsToDisplay }
 }
