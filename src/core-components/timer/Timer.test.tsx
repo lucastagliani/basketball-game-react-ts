@@ -1,6 +1,6 @@
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
 import * as React from 'react'
-import Timer from './Timer'
+import Timer from '.'
 
 describe('<Timer>', () => {
   it('should start the initial clock as 00:00.000', () => {

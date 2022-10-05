@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Header from './header'
-import WhichPlayerGame from './which-player-game/WhichPlayerGame'
+import WhichPlayerGame from './which-player-game'
 
 function App(): JSX.Element {
   return (
