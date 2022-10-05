@@ -1,14 +1,18 @@
 import React from 'react'
-import './App.css'
+import styled from 'styled-components'
 import Header from './header'
 import PlayerNameGame from './player-name-game'
 
-function App(): JSX.Element {
+const Application = styled.div`
+  text-align: center;
+`
+
+const App = (): JSX.Element => {
   return (
-    <div className="App">
+    <Application>
       <Header />
       <PlayerNameGame />
-    </div>
+    </Application>
   )
 }
 
