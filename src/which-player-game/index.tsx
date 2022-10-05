@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import Score from '../core-components/score/Score'
-import PlayerImage from './PlayerImage/PlayerImage'
+import PlayerImage from './PlayerImage'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/basketball-rim.mp3'
-import Timer from '../core-components/timer/Timer'
-import AnswerOptions from './AnswerOptions/AnswerOptions'
+import Timer from '../core-components/timer'
+import AnswerOptions from './AnswerOptions'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import AnswerOptions from './AnswerOptions'
+import AnswerOptions from '.'
 
 describe('<AnswerOptions />', () => {
   const onAnswerClickSpy = jest.fn()

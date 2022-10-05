@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import WhichPlayerGame from './WhichPlayerGame'
+import WhichPlayerGame from '.'
 import { questionsApiMockedData } from './questionsApiMockedData'
 
 jest.mock('axios', () => ({

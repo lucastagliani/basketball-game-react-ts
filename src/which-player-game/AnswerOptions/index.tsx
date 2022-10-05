@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../core-components/button/Button'
+import Button from '../../core-components/button'
 import { AlternativeOption } from '../types'
 
 type AnswerOptionsProps = {
