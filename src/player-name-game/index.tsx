@@ -13,7 +13,7 @@ const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): num
   return parseInt(event.currentTarget.value)
 }
 
-const WhichPlayerGame = (): JSX.Element => {
+const PlayerNameGame = (): JSX.Element => {
   const [playRightAnswerSound] = useSound(basketballSwish)
   const [playWrongAnswerSound] = useSound(basketballRim)
   const { getNewQuestion } = useQuestionApi()
@@ -64,7 +64,7 @@ const WhichPlayerGame = (): JSX.Element => {
   }
 
   return (
-    <div id="which-player-game">
+    <div id="player-name-game">
       <h1>What is the name of the player below?</h1>
       <Score
         attempts={totalAttempts}
@@ -78,4 +78,4 @@ const WhichPlayerGame = (): JSX.Element => {
   )
 }
 
-export default WhichPlayerGame
+export default PlayerNameGame

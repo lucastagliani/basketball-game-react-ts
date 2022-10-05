@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
 import Header from './header'
-import WhichPlayerGame from './which-player-game'
+import PlayerNameGame from './player-name-game'
 
 function App(): JSX.Element {
   return (
     <div className="App">
       <Header />
-      <WhichPlayerGame />
+      <PlayerNameGame />
     </div>
   )
 }
