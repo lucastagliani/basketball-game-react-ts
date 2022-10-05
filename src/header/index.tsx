@@ -1,5 +1,5 @@
 import React from 'react'
-import background from './basketball-at-court.png'
+import background from './basketball-in-court-by-tjdragotta-from-unplash.png'
 
 const imageStyle = {
   maxWidth: '100%',
