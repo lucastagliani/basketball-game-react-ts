@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from './footer'
 import Header from './header'
 import PlayerNameGame from './player-name-game'
 
@@ -12,6 +13,7 @@ const App = (): JSX.Element => {
     <Application>
       <Header />
       <PlayerNameGame />
+      <Footer />
     </Application>
   )
 }
