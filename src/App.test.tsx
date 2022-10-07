@@ -1,7 +1,16 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import App from './App'
 
-test.skip('renders learn react link', () => {
-  render(<App />)
+
+describe('<App />', () => {
+  it('should render header', () => {
+    render(<App />)
+    expect(screen.getByRole('heading')).toBeInTheDocument()
+  })
+
+  it('should render footer', () => {
+    const {container} = render(<App />)
+    expect(container.querySelector('footer')).toBeInTheDocument()
+  })
 })
