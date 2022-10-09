@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import SocialMedia from './SocialMedia'
 
 const AppFooter = styled.footer`
   width: 100%;
@@ -12,9 +13,32 @@ const CopyRightText = styled.span`
 `
 
 const Footer = (): JSX.Element => {
+  const socialMediaItems = [
+    {
+      faCode: 'linkedin',
+      url: 'https://www.linkedin.com/in/lucastagliani/'
+    },
+    {
+      faCode: 'medium',
+      url: 'https://medium.com/@lucastagliani'
+    },
+    {
+      faCode: 'github',
+      url: 'https://github.com/lucastagliani'
+    },
+    {
+      faCode: 'instagram',
+      url: 'http://instagram.com/lucas_tagliani'
+    },
+    {
+      faCode: 'twitter',
+      url: 'https://twitter.com/lucastagliani'
+    },
+  ]
   return (
     <AppFooter>
       <CopyRightText>Copyright @ Lucas Tagliani Aguiar</CopyRightText>
+      <SocialMedia items={socialMediaItems}/> 
     </AppFooter>
   )
 }

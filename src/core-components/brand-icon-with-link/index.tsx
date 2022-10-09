@@ -7,9 +7,9 @@ type BrandIconWithLinkProps = {
 }
 
 const BrandIconWithLink = ({faCode, ariaLabelText, url}: BrandIconWithLinkProps): JSX.Element => {
-  const iconClassName = `fa-brands fa-${faCode}}`
+  const iconClassName = `fa-brands fa-${faCode}`
   return (
-    <a href={url} aria-label={ariaLabelText}>
+    <a href={url} aria-label={ariaLabelText} target="_blank" rel="noreferrer">
       <i className={iconClassName}></i>
     </a>
   )
