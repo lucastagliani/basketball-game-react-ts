@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import App from './App'
 
 
-describe.skip('<App />', () => {
+describe('<App />', () => {
   it('should render header', () => {
     render(<App />)
     expect(screen.getByRole('heading')).toBeInTheDocument()

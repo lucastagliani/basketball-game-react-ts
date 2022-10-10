@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import SocialMedia from './SocialMedia'
 
-describe.skip('<SocialMedia />', () => {
+describe('<SocialMedia />', () => {
   it('should render all provided social media icons', () => {
     const items = [
       {
