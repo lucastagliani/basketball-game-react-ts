@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import SocialMedia from './SocialMedia'
 
 const AppFooter = styled.footer`

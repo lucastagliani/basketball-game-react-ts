@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import background from './basketball-in-court-by-tjdragotta-from-unplash.png'
 
 const AppHeader = styled.header`
