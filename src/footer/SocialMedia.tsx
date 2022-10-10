@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react'
 import BrandIconWithLink from '../core-components/brand-icon-with-link'
 
@@ -10,9 +11,13 @@ type SocialMediaProps = {
   items: SocialMediaItem[]
 }
 
+const socialMediaContainerStyle = {
+  margin: '0.5rem'
+}
+
 const SocialMedia = ({ items }: SocialMediaProps): JSX.Element => {
   return (
-    <div>
+    <div css={socialMediaContainerStyle}>
       {items.map((item) => {
         const props = {
           ariaLabelText: item.faCode,

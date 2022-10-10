@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Footer from './footer'
 import Header from './header'
 import PlayerNameGame from './player-name-game'
