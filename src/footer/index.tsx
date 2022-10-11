@@ -1,15 +1,24 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import SocialMedia from './SocialMedia'
+import CheckoutCodeText from './CheckoutCodeText'
 
 const AppFooter = styled.footer`
   width: 100%;
   background-color: #afb4ba;
-  padding: 1rem
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
 `
 
-const CopyRightText = styled.span`
+const Text = styled.span`
   font-size: 11px
+`
+
+const Box = styled.div`
+  width: 33.33%;
+  margin: auto;
 `
 
 const Footer = (): JSX.Element => {
@@ -37,8 +46,15 @@ const Footer = (): JSX.Element => {
   ]
   return (
     <AppFooter>
-      <CopyRightText>Copyright @ Lucas Tagliani Aguiar</CopyRightText>
-      <SocialMedia items={socialMediaItems}/> 
+      <Box>
+        <CheckoutCodeText />
+      </Box>
+      <Box>
+        <Text>Copyright @ Lucas Tagliani Aguiar</Text>
+      </Box>
+      <Box>
+        <SocialMedia items={socialMediaItems} />
+      </Box>
     </AppFooter>
   )
 }
