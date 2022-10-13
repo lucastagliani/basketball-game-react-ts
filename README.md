@@ -14,7 +14,7 @@ I love coding and I love sports - mainly basketball and soccer. My idea with thi
 
 ## Disclaimer
 
-This personal project was created for fun, it might not use the best tools or practices considered by me, but I use some of them for practicing and learning.
+This personal project was created for fun, it might not use the best tools or practices considered by me, but I use some of them for practicing and learning. For example, you will see that UI styles are set through style/css props, styled components and one css file.
 
 ## API
 
