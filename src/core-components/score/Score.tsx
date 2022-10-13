@@ -11,7 +11,7 @@ type ScoreProps = {
 
 const defaultContainerStyles: CSSProperties = {
   padding: '1rem',
-  fontSize: '2rem',
+  fontSize: '1.6rem',
   color: '#333',
 }
 
