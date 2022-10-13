@@ -20,7 +20,7 @@ const GameTitle = styled.h1`
 
 const PlayerNameGameContainer = styled.div`
   margin: auto;
-  max-width: 800px;
+  max-width: 600px;
 `
 
 const PlayerNameGame = (): JSX.Element => {
