@@ -14,7 +14,7 @@ describe('<Score />', () => {
     const scoreElement = screen.getByText('2 / 3')
     expect(scoreElement.parentElement).toHaveStyle({
       padding: '1rem',
-      fontSize: '2rem',
+      fontSize: '1.6rem',
       color: '#333',
     })
   })
