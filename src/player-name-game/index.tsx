@@ -8,10 +8,20 @@ import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/basketball-rim.mp3'
 import Timer from '../core-components/timer'
 import AnswerOptions from './AnswerOptions'
+import styled from '@emotion/styled'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
 }
+
+const GameTitle = styled.h1`
+  margin: 1rem;
+`
+
+const PlayerNameGameContainer = styled.div`
+  margin: auto;
+  max-width: 800px;
+`
 
 const PlayerNameGame = (): JSX.Element => {
   const [playRightAnswerSound] = useSound(basketballSwish)
@@ -64,8 +74,8 @@ const PlayerNameGame = (): JSX.Element => {
   }
 
   return (
-    <div id="player-name-game">
-      <h1>What is the name of the player below?</h1>
+    <PlayerNameGameContainer id="player-name-game">
+      <GameTitle>What is the name of the player below?</GameTitle>
       <Score
         attempts={totalAttempts}
         correct={correctAttempts}
@@ -74,7 +84,7 @@ const PlayerNameGame = (): JSX.Element => {
       <Timer isRunning={isTimerRunning} />
       <PlayerImage altText="player" playerId={correctAnswer} />
       <AnswerOptions alternativies={alternativies} onAnswerClick={handleOnClick} />
-    </div>
+    </PlayerNameGameContainer>
   )
 }
 
