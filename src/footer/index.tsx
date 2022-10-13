@@ -8,21 +8,25 @@ type ContainerProps = {
   isMobile?: boolean
 }
 
-const AppFooter = styled.footer<ContainerProps>`
-  width: 100%;
-  background-color: #afb4ba;
-  padding: 1rem;
-  display: flex;
-  flex-direction: ${({isMobile}) => isMobile ? 'column' : 'row' };
-  bottom: 0;
-`
+const AppFooter = styled.footer<ContainerProps>(
+  ({isMobile}) => {
+    return { 
+      backgroundColor: '#afb4ba',
+      padding: '1rem 0',
+      display: 'flex',
+      bottom: 0,
+      flexDirection: isMobile ? 'column' : 'row',
+      ...(isMobile && {width: '100%'})
+    }
+  }
+)
 
 const Text = styled.span`
   font-size: 12px;
 `
 
 const Box = styled.div<ContainerProps>(
-  ({isMobile}) => {
+  ({ isMobile }) => {
     return {
       width: isMobile ? '100%' : '33.33%',
       margin: 'auto',
@@ -60,7 +64,7 @@ const socialMediaItems = [
 
 const Footer = (): JSX.Element => {
   const isMobile = useMediaQuery({ query: '(max-width: 760px)' })
-  
+
   // TODO: avoid isMobile prop being passed so much
   return (
     <AppFooter isMobile={isMobile}>

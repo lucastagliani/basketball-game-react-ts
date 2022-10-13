@@ -12,13 +12,15 @@ const defaultStyle: CSSProperties = {
   backgroundColor: 'white',
   border: '2px solid #555',
   color: 'black',
-  padding: '15px 32px',
+  padding: '8px',
   textAlign: 'center',
   textDecoration: 'none',
   display: 'inline-block',
   fontSize: '16px',
   margin: '4px',
   transitionDuration: '0.4s',
+  width: '95%',
+  height: '55px',
 }
 
 const hoverStyle: CSSProperties = {
