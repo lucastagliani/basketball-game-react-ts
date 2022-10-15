@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Text = styled.span`
-  font-size: 11px
+  font-size: 11px;
 `
 
 const CheckoutCodeText = (): JSX.Element => {
