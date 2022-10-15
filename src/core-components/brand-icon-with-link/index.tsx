@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import Link from '../link'
 
 type BrandIconWithLinkProps = {
   faCode: string
@@ -7,16 +7,15 @@ type BrandIconWithLinkProps = {
   url: string
 }
 
-const Link = styled('a')`
-  margin: 0.2rem;
-  font-size: 1.2rem;
-  color: #333;
-`
+const linkStyles = {
+  fontSize: '1.2rem', 
+  margin: '0.2rem'
+}
 
 const BrandIconWithLink = ({faCode, ariaLabelText, url}: BrandIconWithLinkProps): JSX.Element => {
   const iconClassName = `fa-brands fa-${faCode}`
   return (
-    <Link href={url} aria-label={ariaLabelText} target="_blank" rel="noreferrer">
+    <Link url={url} ariaLabelText={ariaLabelText} stylesOverride={linkStyles}>
       <i className={iconClassName}></i>
     </Link>
   )

@@ -1,26 +1,27 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Link from '../core-components/link'
+
 
 const Text = styled.span`
-  font-size: 11px;
+  font-size: 12px;
 `
+
 
 const CheckoutCodeText = (): JSX.Element => {
   return (
     <Text>
       Checkout the code behind:&nbsp;
-      <a 
-        href="https://github.com/lucastagliani/nba-info-react-ts" 
-        target="_blank" 
-        rel="noreferrer"
-      >UI</a>
+      <Link 
+        url='https://github.com/lucastagliani/nba-info-react-ts' 
+        ariaLabelText='UI'
+      >UI</Link>
       &nbsp;and&nbsp;
-      <a 
-        href="https://github.com/lucastagliani/nba-api-nodejs" 
-        target="_blank" 
-        rel="noreferrer"
-      >API</a>
-    </Text>
+      <Link
+        url="https://github.com/lucastagliani/nba-api-nodejs"
+        ariaLabelText={'API'}
+      >API</Link>
+    </Text >
   )
 }
 
