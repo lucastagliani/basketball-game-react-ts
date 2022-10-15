@@ -13,8 +13,12 @@ const StyledLink = styled('a')`
   color: #333;
 `
 
-const Link = ({ 
-  ariaLabelText, url, stylesOverride, children, target = '_blank'
+const Link = ({
+  ariaLabelText,
+  url,
+  stylesOverride,
+  children,
+  target = '_blank',
 }: LinkProps): JSX.Element => {
   return (
     <StyledLink
@@ -22,8 +26,9 @@ const Link = ({
       href={url}
       aria-label={ariaLabelText}
       rel="noreferrer"
-      style={stylesOverride}
-    >{children}</StyledLink>
+      style={stylesOverride}>
+      {children}
+    </StyledLink>
   )
 }
 
