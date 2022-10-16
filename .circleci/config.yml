@@ -3,8 +3,13 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.1
+  typescript: vidsy/typescript@1.2.1
 
 workflows:
+  example-workflow:
+    jobs:
+      - typescript/build:
+          node-modules-cache-key: '1'
   sample:
     jobs:
       - node/test:
