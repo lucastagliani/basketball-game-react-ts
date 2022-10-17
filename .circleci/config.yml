@@ -9,7 +9,7 @@ workflows:
   example-workflow:
     jobs:
       - typescript/build:
-          node-modules-cache-key: '1'
+          node-modules-cache-key: 'xxx'
   sample:
     jobs:
       - node/test:
