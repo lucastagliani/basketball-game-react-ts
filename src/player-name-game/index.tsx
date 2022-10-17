@@ -33,32 +33,33 @@ const PlayerNameGame = (): JSX.Element => {
   const [correctAnswer, setCorrectAnswer] = useState(-1)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const updateQuestionDisplayed = async () => {
+    try {
       const { data } = await getNewQuestion()
       if (data) {
         setCorrectAnswer(data.correctAnswerKey)
         setAlternativies(data.alternativeOptions)
       }
+    } catch (error) {
+      console.log(error)
+      throw new Error(error as string)
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      updateQuestionDisplayed()
     }
 
     fetchData()
   }, [])
-
-  const updateQuestionDisplayed = async () => {
-    const { data } = await getNewQuestion()
-    if (data) {
-      setCorrectAnswer(data.correctAnswerKey)
-      setAlternativies(data.alternativeOptions)
-    }
-  }
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     if (!isTimerRunning) {
       setIsTimerRunning(true)
     }
-    
+
     const userAnswer = getUserAnswerFromEvent(event)
 
     setTotalAttempts(totalAttempts + 1)
