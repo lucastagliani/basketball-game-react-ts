@@ -7,7 +7,7 @@
     "start:local-api": "REACT_APP_NODE_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "test:ci": "tsc --noEmit && jest",
+    "test:ci": "npm run type-check && npm run test",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
