@@ -69,7 +69,6 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
     "*.{js,jsx,ts,tsx}": "eslint --fix",
-    "*.{ts,tsx}": "tsc --noEmit --allowSyntheticDefaultImports --jsx preserve",
     "*.js": "eslint --cache --fix"
   }
 }
