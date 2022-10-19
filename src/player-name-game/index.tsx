@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import useSound from 'use-sound'
+import React, { useEffect } from 'react'
 import Score from '../core-components/score/Score'
 import PlayerImage from './PlayerImage'
-import { AlternativeOption } from './types'
-import useQuestionApi from './useQuestionApi'
-import basketballSwish from './sounds/basketball-swish.mp3'
-import basketballRim from './sounds/basketball-rim.mp3'
 import Timer from '../core-components/timer'
 import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
+import usePlayerNameGameService from './usePlayerNameGameService'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -24,55 +20,28 @@ const PlayerNameGameContainer = styled.div`
 `
 
 const PlayerNameGame = (): JSX.Element => {
-  const [playRightAnswerSound] = useSound(basketballSwish)
-  const [playWrongAnswerSound] = useSound(basketballRim)
-  const { getNewQuestion } = useQuestionApi()
-  const [correctAttempts, setCorrectAttempts] = useState(0)
-  const [totalAttempts, setTotalAttempts] = useState(0)
-  const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
-  const [correctAnswer, setCorrectAnswer] = useState(-1)
-  const [isTimerRunning, setIsTimerRunning] = useState(false)
-
-  const updateQuestionDisplayed = async () => {
-    try {
-      const { data } = await getNewQuestion()
-      if (data) {
-        setCorrectAnswer(data.correctAnswerKey)
-        setAlternativies(data.alternativeOptions)
-      }
-    } catch (error) {
-      console.log(error)
-      throw new Error(error as string)
-    }
-  }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      updateQuestionDisplayed()
-    }
-
-    fetchData()
-  }, [])
+  const {
+    totalAttempts,
+    correctAttempts,
+    isTimerRunning,
+    correctAnswer,
+    alternativies,
+    executeUserAnswer,
+    getNewQuestion,
+  } = usePlayerNameGameService()
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
-    if (!isTimerRunning) {
-      setIsTimerRunning(true)
-    }
 
     const userAnswer = getUserAnswerFromEvent(event)
+    executeUserAnswer(userAnswer)
 
-    setTotalAttempts(totalAttempts + 1)
-
-    if (userAnswer === correctAnswer) {
-      playRightAnswerSound()
-      setCorrectAttempts(correctAttempts + 1)
-    } else {
-      playWrongAnswerSound()
-    }
-
-    updateQuestionDisplayed()
+    getNewQuestion()
   }
+
+  useEffect(() => {
+    getNewQuestion()
+  }, [])
 
   return (
     <PlayerNameGameContainer id="player-name-game">

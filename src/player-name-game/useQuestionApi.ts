@@ -9,16 +9,16 @@ const BASE_URL =
 const useQuestionApi = () => {
   const endpoint = '/questions'
 
-  const getNewQuestion = async () => {
+  const fetchNewQuestion = async () => {
     try {
       const response = await axios.get<Question>(`${BASE_URL}${endpoint}`)
-      return response
+      return response?.data || {}
     } catch (error) {
       throw new Error(error as string)
     }
   }
 
-  return { getNewQuestion }
+  return { fetchNewQuestion }
 }
 
 export default useQuestionApi
