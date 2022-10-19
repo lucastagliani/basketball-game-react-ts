@@ -15,6 +15,7 @@ const defaultStyle: CSSProperties = {
   padding: '8px',
   textAlign: 'center',
   textDecoration: 'none',
+  fontFamily: 'Copperplate,fantasy',
   display: 'inline-block',
   fontSize: '16px',
   margin: '4px',
