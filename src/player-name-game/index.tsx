@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Score from '../core-components/score/Score'
 import PlayerImage from './PlayerImage'
 import Timer from '../core-components/timer'
 import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
 import usePlayerNameGameService from './usePlayerNameGameService'
+import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -48,8 +49,14 @@ const PlayerNameGame = (): JSX.Element => {
         textBeforeScore={'Your current score is:'}
       />
       <Timer isRunning={isTimerRunning} />
-      <PlayerImage altText="player" playerId={correctAnswer} />
-      <AnswerOptions alternativies={alternativies} onAnswerClick={handleOnClick} />
+      {alternativies?.length > 0 ? (
+        <>
+          <PlayerImage altText="player" playerId={correctAnswer} />
+          <AnswerOptions alternativies={alternativies} onAnswerClick={handleOnClick} />
+        </>
+      ) : (
+        <ClimbingBoxLoader size={30} color={'#999'} cssOverride={{ margin: 'auto', height: 500 }} />
+      )}
     </PlayerNameGameContainer>
   )
 }
