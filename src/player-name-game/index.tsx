@@ -26,7 +26,7 @@ const PlayerNameGame = (): JSX.Element => {
     isTimerRunning,
     correctAnswer,
     alternativies,
-    executeUserAnswer,
+    answerQuestion,
     getNewQuestion,
   } = usePlayerNameGameService()
 
@@ -34,7 +34,7 @@ const PlayerNameGame = (): JSX.Element => {
     event.preventDefault()
 
     const userAnswer = getUserAnswerFromEvent(event)
-    executeUserAnswer(userAnswer)
+    answerQuestion(userAnswer)
 
     getNewQuestion()
   }
