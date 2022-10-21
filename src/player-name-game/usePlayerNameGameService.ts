@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
 import basketballSwish from './sounds/basketball-swish.mp3'
-import basketballRim from './sounds/basketball-rim.mp3'
+import basketballRim from './sounds/crowd-booing.mp3'
 
 const usePlayerNameGameService = () => {
   const { fetchNewQuestion } = useQuestionApi()
@@ -12,7 +12,7 @@ const usePlayerNameGameService = () => {
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
 
   const [playRightAnswerSound] = useSound(basketballSwish)
-  const [playWrongAnswerSound] = useSound(basketballRim)
+  const [playWrongAnswerSound] = useSound(basketballRim, { interrupt: true })
   const [correctAttempts, setCorrectAttempts] = useState(0)
   const [totalAttempts, setTotalAttempts] = useState(0)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
@@ -37,6 +37,10 @@ const usePlayerNameGameService = () => {
       playWrongAnswerSound()
     }
   }
+
+  useEffect(() => {
+    getNewQuestion()
+  }, [])
 
   return {
     totalAttempts,

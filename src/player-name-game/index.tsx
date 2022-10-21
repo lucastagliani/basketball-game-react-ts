@@ -39,10 +39,6 @@ const PlayerNameGame = (): JSX.Element => {
     getNewQuestion()
   }
 
-  useEffect(() => {
-    getNewQuestion()
-  }, [])
-
   return (
     <PlayerNameGameContainer id="player-name-game">
       <GameTitle>What is the name of the player below?</GameTitle>
