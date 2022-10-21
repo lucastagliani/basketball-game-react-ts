@@ -23,7 +23,7 @@ const usePlayerNameGameService = () => {
     setAlternativies(alternativeOptions)
   }
 
-  const executeUserAnswer = (userAnswer: number) => {
+  const answerQuestion = (userAnswer: number) => {
     if (!isTimerRunning) {
       setIsTimerRunning(true)
     }
@@ -44,7 +44,7 @@ const usePlayerNameGameService = () => {
     isTimerRunning,
     correctAnswer,
     alternativies,
-    executeUserAnswer,
+    answerQuestion,
     getNewQuestion,
   }
 }
