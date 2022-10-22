@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import Score from '../core-components/score/Score'
 import PlayerImage from './PlayerImage'
 import Timer from '../core-components/timer'
 import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
 import usePlayerNameGameService from './usePlayerNameGameService'
-import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader'
+import RiseLoader from 'react-spinners/RiseLoader'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -19,6 +19,13 @@ const PlayerNameGameContainer = styled.div`
   margin: auto;
   max-width: 600px;
 `
+
+const spinnerStyles: CSSProperties = {
+  margin: 'auto',
+  height: 400,
+  position: 'relative',
+  top: 150,
+}
 
 const PlayerNameGame = (): JSX.Element => {
   const {
@@ -55,7 +62,7 @@ const PlayerNameGame = (): JSX.Element => {
           <AnswerOptions alternativies={alternativies} onAnswerClick={handleOnClick} />
         </>
       ) : (
-        <ClimbingBoxLoader size={30} color={'#999'} cssOverride={{ margin: 'auto', height: 500 }} />
+        <RiseLoader size={30} color={'#999'} cssOverride={spinnerStyles} />
       )}
     </PlayerNameGameContainer>
   )
