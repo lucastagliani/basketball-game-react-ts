@@ -28,9 +28,8 @@ describe('<PlayerNameGame />', () => {
   })
   it('should render a player picture', async () => {
     render(<PlayerNameGame />)
-    const playerImage = screen.getByRole('img', { name: 'player' })
     await waitFor(() => {
-      expect(playerImage).toBeInTheDocument()
+      expect(screen.getByRole('img', { name: 'player' })).toBeInTheDocument()
     })
   })
   it('should render 4 possible answers', async () => {
