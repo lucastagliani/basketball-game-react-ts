@@ -18,4 +18,6 @@ workflows:
     jobs:
       - heroku/deploy-via-git:
           app-name: 'nba-info-react-ts'
-
+          filters:
+            branches:
+              only: main # only run deploy-via-git job on main branch
