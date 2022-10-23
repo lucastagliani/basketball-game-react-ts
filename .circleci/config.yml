@@ -21,5 +21,5 @@ workflows:
           requires:
             - node/test # only run deploy-via-git job if the build job has completed
           filters:
-          branches:
-            only: main # only run deploy-via-git job on main branch
+            branches:
+              only: main # only run deploy-via-git job on main branch
