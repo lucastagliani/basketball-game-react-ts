@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react'
 
 interface ButtonProps {
   text: string
-  value: string
+  value?: string
   className?: string
   overrideStyles?: CSSProperties
   onButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
@@ -32,7 +32,7 @@ const hoverStyle: CSSProperties = {
 
 const Button = ({
   text,
-  value,
+  value = text,
   className = '',
   overrideStyles = {},
   onButtonClick,
