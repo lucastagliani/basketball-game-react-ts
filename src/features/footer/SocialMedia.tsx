@@ -1,5 +1,5 @@
 import React from 'react'
-import BrandIconWithLink from '../core-components/brand-icon-with-link'
+import BrandIconWithLink from '../../core-components/brand-icon-with-link'
 
 type SocialMediaItem = {
   faCode: string
@@ -13,10 +13,10 @@ type SocialMediaProps = {
 const SocialMedia = ({ items }: SocialMediaProps): JSX.Element => {
   return (
     <div>
-      {items.map((item) => {
+      {items.map(item => {
         const props = {
           ariaLabelText: item.faCode,
-          ...item
+          ...item,
         }
         return <BrandIconWithLink key={item.faCode} {...props} />
       })}
