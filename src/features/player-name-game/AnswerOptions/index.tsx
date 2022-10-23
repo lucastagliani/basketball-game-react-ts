@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import Button from '../../core-components/button'
+import Button from '../../../core-components/button'
 import { AlternativeOption } from '../types'
 
 type AnswerOptionsProps = {
-  alternativies: AlternativeOption[],
+  alternativies: AlternativeOption[]
   onAnswerClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 

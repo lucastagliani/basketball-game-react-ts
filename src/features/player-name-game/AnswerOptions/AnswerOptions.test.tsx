@@ -22,13 +22,13 @@ describe('<AnswerOptions />', () => {
       {
         key: 202695,
         value: 'Kawhi Leonard',
-      }
+      },
     ],
-    onAnswerClick: onAnswerClickSpy
+    onAnswerClick: onAnswerClickSpy,
   }
 
   beforeEach(() => {
-    render(<AnswerOptions {...props}/>)
+    render(<AnswerOptions {...props} />)
   })
 
   it('should render all answer options provided', () => {

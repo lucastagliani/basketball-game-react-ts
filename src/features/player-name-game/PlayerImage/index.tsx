@@ -9,11 +9,13 @@ type PlayerImageProps = {
 }
 
 const getDefaultStyles = (isMobile: boolean): CSSProperties => {
-  return isMobile ? {
-    maxWidth: '100%',
-  } : {
-    height: '400px',
-  }
+  return isMobile
+    ? {
+      maxWidth: '100%',
+    }
+    : {
+      height: '400px',
+    }
 }
 
 const BASE_URL_PLAYER_IMAGE = 'https://cdn.nba.com/headshots/nba/latest/1040x760/'
