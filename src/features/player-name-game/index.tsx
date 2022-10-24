@@ -6,6 +6,7 @@ import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
 import usePlayerNameGameService from './usePlayerNameGameService'
 import RiseLoader from 'react-spinners/RiseLoader'
+import GameOverModal from './GameOverModal'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -32,6 +33,8 @@ const PlayerNameGame = (): JSX.Element => {
     totalAttempts,
     correctAttempts,
     isTimerRunning,
+    isModalOpen,
+    setIsModalOpen,
     correctAnswer,
     alternativies,
     answerQuestion,
@@ -45,6 +48,13 @@ const PlayerNameGame = (): JSX.Element => {
     answerQuestion(userAnswer)
 
     getNewQuestion()
+  }
+
+  const modalProps = {
+    isModalOpen,
+    correctAttempts,
+    totalAttempts,
+    handleCloseButtonClick: () => setIsModalOpen(false),
   }
 
   return (
@@ -64,6 +74,7 @@ const PlayerNameGame = (): JSX.Element => {
       ) : (
         <RiseLoader size={30} color={'#999'} cssOverride={spinnerStyles} />
       )}
+      <GameOverModal {...modalProps} />
     </PlayerNameGameContainer>
   )
 }

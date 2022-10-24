@@ -6,11 +6,15 @@ type GameOverModalProps = {
   isModalOpen: boolean
   totalAttempts: number
   correctAttempts: number
+  handleCloseButtonClick: unknown
 }
 
 const customStyles: Styles = {
   content: {
-    height: 300,
+    height: 'fit-content',
+    margin: 'auto',
+    textAlign: 'center',
+    maxWidth: 500,
   },
 }
 
@@ -51,10 +55,17 @@ const getSubtitleByScore = (score: number): string => {
   return getRandomSubtitle(gameOverSubtitules[arrayPosition])
 }
 
-const GameOverModal = ({ isModalOpen, correctAttempts, totalAttempts }: GameOverModalProps) => {
+Modal.setAppElement('#root')
+
+const GameOverModal = ({
+  isModalOpen,
+  correctAttempts,
+  totalAttempts,
+  handleCloseButtonClick,
+}: GameOverModalProps) => {
   const buttonProps = {
     text: 'Close',
-    onButtonClick: () => console.log('Closing modal...'),
+    onButtonClick: () => handleCloseButtonClick,
   }
 
   return (
