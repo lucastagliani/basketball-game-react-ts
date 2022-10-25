@@ -55,7 +55,9 @@ const getSubtitleByScore = (score: number): string => {
   return getRandomSubtitle(gameOverSubtitules[arrayPosition])
 }
 
-Modal.setAppElement('#root')
+if (process.env.NODE_ENV !== 'test') {
+  Modal.setAppElement('#root')
+}
 
 const GameOverModal = ({
   isModalOpen,
