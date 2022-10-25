@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import GameOverModal from '.'
 
-describe.skip('<GameOverModal />', () => {
+describe('<GameOverModal />', () => {
   beforeEach(() => {
     const props = {
       isModalOpen: true,
