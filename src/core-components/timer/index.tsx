@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 enum Unit {
   Minute,
   Second,
-  Milisecond
+  Milisecond,
 }
 
 type TimerProps = {
@@ -14,21 +14,21 @@ type TimerProps = {
 
 const unitsParameters = {
   [Unit.Minute]: {
-    divisor: 60000, 
-    modulo: 60
+    divisor: 60000,
+    modulo: 60,
   },
   [Unit.Second]: {
-    divisor: 1000, 
-    modulo: 60
+    divisor: 1000,
+    modulo: 60,
   },
   [Unit.Milisecond]: {
-    divisor: 10, 
-    modulo: 100
+    divisor: 10,
+    modulo: 100,
   },
 }
 
 const formatTimeUnit = (time: number, unit: Unit) => {
-  const {divisor, modulo} = unitsParameters[unit]
+  const { divisor, modulo } = unitsParameters[unit]
   const unitTimeAmount = (time / divisor) % modulo
   return ('0' + Math.floor(unitTimeAmount)).slice(-2)
 }
@@ -41,11 +41,12 @@ const getTimeToDisplay = (time: number) => {
   return { minutesToDisplay, secondsToDisplay, milisecondsToDisplay }
 }
 
+let interval: NodeJS.Timeout
+
 const Timer = ({ isRunning = false, initialTime }: TimerProps) => {
   const [time, setTime] = useState(initialTime ?? 0)
 
   useEffect(() => {
-    let interval: NodeJS.Timeout | null = null
     if (isRunning) {
       interval = setInterval(() => {
         setTime(prevTime => prevTime + 100)
