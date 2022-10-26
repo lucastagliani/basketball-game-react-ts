@@ -34,7 +34,6 @@ const PlayerNameGame = (): JSX.Element => {
     correctAttempts,
     isTimerRunning,
     isModalOpen,
-    setIsModalOpen,
     correctAnswer,
     alternativies,
     answerQuestion,
@@ -50,11 +49,15 @@ const PlayerNameGame = (): JSX.Element => {
     getNewQuestion()
   }
 
+  const handleCloseButtonClick = () => {
+    window.location.reload()
+  }
+
   const modalProps = {
     isModalOpen,
     correctAttempts,
     totalAttempts,
-    handleCloseButtonClick: () => setIsModalOpen(false),
+    handleCloseButtonClick,
   }
 
   return (

@@ -6,7 +6,7 @@ type GameOverModalProps = {
   isModalOpen: boolean
   totalAttempts: number
   correctAttempts: number
-  handleCloseButtonClick: unknown
+  handleCloseButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const customStyles: Styles = {
@@ -66,18 +66,18 @@ const GameOverModal = ({
   handleCloseButtonClick,
 }: GameOverModalProps) => {
   const buttonProps = {
-    text: 'Close',
-    onButtonClick: () => handleCloseButtonClick,
+    text: 'Play again!',
+    onButtonClick: handleCloseButtonClick,
   }
 
   return (
     <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Game over modal">
       <h2>The game is over!</h2>
-      <p>{getSubtitleByScore(correctAttempts)}</p>
       <p>
         You scored {correctAttempts} out of {totalAttempts}
       </p>
-      <p>Share it with your friends... (TODO)</p>
+      <p>{getSubtitleByScore(correctAttempts)}</p>
+      {/* <p>Share it with your friends... (TODO)</p> */}
       <Button {...buttonProps} />
     </Modal>
   )

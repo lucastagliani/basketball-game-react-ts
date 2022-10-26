@@ -57,7 +57,6 @@ const usePlayerNameGameService = () => {
     correctAttempts,
     isTimerRunning,
     isModalOpen,
-    setIsModalOpen,
     correctAnswer,
     alternativies,
     answerQuestion,
