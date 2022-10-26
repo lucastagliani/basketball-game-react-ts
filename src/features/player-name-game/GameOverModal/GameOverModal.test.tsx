@@ -23,6 +23,6 @@ describe('<GameOverModal />', () => {
   })
 
   it('should render modal button', () => {
-    expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Play again!' })).toBeInTheDocument()
   })
 })
