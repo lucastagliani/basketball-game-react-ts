@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import mixpanel from 'mixpanel-browser'
+
+if (process.env.REACT_APP_MIXPANEL_TOKEN) {
+  mixpanel.init(process.env.REACT_APP_MIXPANEL_TOKEN)
+  mixpanel.track('page_load')
+}
 
 ReactDOM.render(
   <React.StrictMode>

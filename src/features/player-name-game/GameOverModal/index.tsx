@@ -1,12 +1,13 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
 import Button from '../../../core-components/button'
+import useTrackingService from '../../useTrackingService'
 
 type GameOverModalProps = {
   isModalOpen: boolean
   totalAttempts: number
   correctAttempts: number
-  handleCloseButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+  onButtonClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const customStyles: Styles = {
@@ -63,11 +64,21 @@ const GameOverModal = ({
   isModalOpen,
   correctAttempts,
   totalAttempts,
-  handleCloseButtonClick,
+  onButtonClick,
 }: GameOverModalProps) => {
+  const { track } = useTrackingService()
+
+  const handleButtonClick = () => {
+    track('play_again', {
+      total_right_answers: correctAttempts,
+      total_answers: totalAttempts,
+    })
+    onButtonClick()
+  }
+
   const buttonProps = {
     children: 'Play again!',
-    onButtonClick: handleCloseButtonClick,
+    onButtonClick: handleButtonClick,
   }
 
   return (
