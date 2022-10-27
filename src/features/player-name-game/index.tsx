@@ -49,7 +49,7 @@ const PlayerNameGame = (): JSX.Element => {
     getNewQuestion()
   }
 
-  const handleCloseButtonClick = () => {
+  const onButtonClick = () => {
     window.location.reload()
   }
 
@@ -57,7 +57,7 @@ const PlayerNameGame = (): JSX.Element => {
     isModalOpen,
     correctAttempts,
     totalAttempts,
-    handleCloseButtonClick,
+    onButtonClick,
   }
 
   return (

@@ -8,7 +8,7 @@ describe('<GameOverModal />', () => {
       isModalOpen: true,
       correctAttempts: 4,
       totalAttempts: 5,
-      handleCloseButtonClick: jest.fn(),
+      onButtonClick: jest.fn(),
     }
 
     render(<GameOverModal {...props} />)

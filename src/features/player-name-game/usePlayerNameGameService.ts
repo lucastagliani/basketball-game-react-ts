@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
+import useTrackingService from '../useTrackingService'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/crowd-booing.mp3'
 
@@ -9,6 +10,7 @@ const ATTEMPTS_PER_GAME = 5
 
 const usePlayerNameGameService = () => {
   const { fetchNewQuestion } = useQuestionApi()
+  const { track } = useTrackingService()
 
   const [correctAnswer, setCorrectAnswer] = useState(-1)
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
@@ -28,21 +30,29 @@ const usePlayerNameGameService = () => {
     setAlternativies(alternativeOptions)
   }
 
+  const checkEndGame = () => {
+    if (totalAttempts === ATTEMPTS_PER_GAME) {
+      track('end_game', {
+        total_right_answers: correctAttempts,
+        total_answers: totalAttempts,
+      })
+      setIsTimerRunning(false)
+      setIsModalOpen(true)
+    }
+  }
+
   const answerQuestion = (userAnswer: number) => {
     if (!isTimerRunning) {
       setIsTimerRunning(true)
     }
 
     if (userAnswer === correctAnswer) {
+      track('right_answer')
       playRightAnswerSound()
       setCorrectAttempts(correctAttempts + 1)
     } else {
+      track('wrong_answer')
       playWrongAnswerSound()
-    }
-
-    if (totalAttempts === ATTEMPTS_PER_GAME - 1) {
-      setIsTimerRunning(false)
-      setIsModalOpen(true)
     }
 
     setTotalAttempts(totalAttempts + 1)
@@ -51,6 +61,10 @@ const usePlayerNameGameService = () => {
   useEffect(() => {
     getNewQuestion()
   }, [])
+
+  useEffect(() => {
+    checkEndGame()
+  }, [totalAttempts])
 
   return {
     totalAttempts,
