@@ -26,11 +26,9 @@ const AnswerOptions = ({ alternativies, onAnswerClick }: AnswerOptionsProps): JS
       {alternativies.map(alternative => {
         return (
           <ButtonWrapper key={alternative.key}>
-            <Button
-              value={alternative.key.toString()}
-              text={alternative.value.toString()}
-              onButtonClick={onAnswerClick}
-            />
+            <Button value={alternative.key.toString()} onButtonClick={onAnswerClick}>
+              {alternative.value}
+            </Button>
           </ButtonWrapper>
         )
       })}

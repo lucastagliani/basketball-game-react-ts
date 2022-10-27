@@ -66,7 +66,7 @@ const GameOverModal = ({
   handleCloseButtonClick,
 }: GameOverModalProps) => {
   const buttonProps = {
-    text: 'Play again!',
+    children: 'Play again!',
     onButtonClick: handleCloseButtonClick,
   }
 

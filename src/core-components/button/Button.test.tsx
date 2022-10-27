@@ -9,7 +9,7 @@ describe('<Button />', () => {
   const onButtonClickSpy = jest.fn()
 
   const defaultProps = {
-    text: 'I am a button',
+    children: <span>I am a button</span>,
     value: '123',
     onButtonClick: onButtonClickSpy,
   }
