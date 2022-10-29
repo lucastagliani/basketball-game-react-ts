@@ -14,7 +14,7 @@ const CheckoutCodeText = (): JSX.Element => {
         UI
       </Link>
       &nbsp;and&nbsp;
-      <Link url="https://github.com/lucastagliani/nba-api-nodejs" ariaLabelText={'API'}>
+      <Link url="https://github.com/lucastagliani/nba-api-nodejs" ariaLabelText="API">
         API
       </Link>
     </Text>
