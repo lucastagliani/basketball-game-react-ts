@@ -5,9 +5,6 @@ import Link from '.'
 // import * as useTrackingService from '../../features/useTrackingService'
 
 const trackSpy = jest.fn()
-// jest.mock('../../features/useTrackingService', () => ({
-//   useTrackingService: () => ({track: trackSpy})
-// }))
 
 jest.mock('../../features/useTrackingService', () => {
   return jest.fn(() => ({
@@ -37,7 +34,7 @@ describe('<Link />', () => {
     expect(screen.getByRole('link')).toHaveStyle({ color: 'red' })
   })
 
-  it('calls mixpanel.track with event name', () => {
+  it('calls track action with link_click when clicked', () => {
     userEvent.click(screen.getByRole('link'))
     expect(trackSpy).toHaveBeenCalledTimes(1)
     expect(trackSpy).toHaveBeenCalledWith('link_click', {
