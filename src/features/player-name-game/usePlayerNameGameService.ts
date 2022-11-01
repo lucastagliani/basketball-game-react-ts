@@ -20,6 +20,7 @@ const usePlayerNameGameService = () => {
 
   const [correctAttempts, setCorrectAttempts] = useState(0)
   const [totalAttempts, setTotalAttempts] = useState(0)
+  const [userAnswer, setUserAnswer] = useState(0)
 
   const [isTimerRunning, setIsTimerRunning] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -28,6 +29,24 @@ const usePlayerNameGameService = () => {
     const { correctAnswerKey, alternativeOptions } = await fetchNewQuestion()
     setCorrectAnswer(correctAnswerKey)
     setAlternativies(alternativeOptions)
+  }
+
+  const checkUserAnswer = () => {
+    if (userAnswer === 0 || correctAnswer === 0) {
+      return
+    }
+
+    const isRightAnswer = userAnswer === correctAnswer
+    track('user_answer', {
+      is_correct: isRightAnswer,
+      attempt_number: totalAttempts,
+    })
+
+    if (isRightAnswer) {
+      playRightAnswerSound()
+    } else {
+      playWrongAnswerSound()
+    }
   }
 
   const checkEndGame = () => {
@@ -41,20 +60,16 @@ const usePlayerNameGameService = () => {
     }
   }
 
-  const answerQuestion = (userAnswer: number) => {
+  const answerQuestion = (newUserAnswer: number) => {
     if (!isTimerRunning) {
       setIsTimerRunning(true)
     }
 
-    if (userAnswer === correctAnswer) {
-      track('right_answer')
-      playRightAnswerSound()
+    if (newUserAnswer === correctAnswer) {
       setCorrectAttempts(correctAttempts + 1)
-    } else {
-      track('wrong_answer')
-      playWrongAnswerSound()
     }
 
+    setUserAnswer(newUserAnswer)
     setTotalAttempts(totalAttempts + 1)
   }
 
@@ -63,6 +78,7 @@ const usePlayerNameGameService = () => {
   }, [])
 
   useEffect(() => {
+    checkUserAnswer()
     checkEndGame()
   }, [totalAttempts])
 
