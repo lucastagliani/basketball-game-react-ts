@@ -14,9 +14,17 @@ I love coding and I love sports - mainly basketball and soccer. My idea with thi
 
 This personal project was created for fun, it might not use the best tools or practices considered by me, but I use some of them for practicing and learning. For example, you will see that UI styles are set through style/css props, styled components and one css file.
 
+## Tracked user data (Mixpanel)
+
+This project uses Mixpanel to keep track of user actions. Here is the dashboard created so far.
+
+![Image](readme-assets/mixpanel-dashboard.jpeg 'Basketbal Game Dashboard in Mixpanel. It contains a conversion funil and a pie chart.')
+
+NOTE: whoever decide to fork this project can add a mixpanel token to `REACT_APP_MIXPANEL_TOKEN` to start tracking it.
+
 ## API
 
-The API attached to this front-end applications is here: [nba-api-nodejs](https://github.com/lucastagliani/nba-api-nodejs)
+The API consumed for this front-end application is here: [nba-api-nodejs](https://github.com/lucastagliani/nba-api-nodejs)
 
 ## Available Scripts
 
