@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import PlayerNameGame from '.'
 import { questionsApiMockedData } from './__mocks__/questionsApiMockedData'
+import { renderRootElementForReactModal } from '../../test-utils'
 
 jest.mock('axios', () => ({
   get: () => {
@@ -28,6 +29,10 @@ const getRightAnswerButton = () => screen.getByText('Nikola Jokic')
 const getWrongAnswerButton = () => screen.getByText('Franz Wagner')
 
 describe('<PlayerNameGame />', () => {
+  beforeEach(() => {
+    renderRootElementForReactModal()
+  })
+
   it('should render a game title', async () => {
     render(<PlayerNameGame />)
     const gameTitle = screen.getByRole('heading', {

@@ -8,6 +8,8 @@ import basketballRim from './sounds/crowd-booing.mp3'
 
 const ATTEMPTS_PER_GAME = 5
 
+const hasReachedTotalAttempts = (totalAttempts: number) => totalAttempts === ATTEMPTS_PER_GAME
+
 const usePlayerNameGame = () => {
   const { fetchNewQuestion } = useQuestionApi()
   const { track } = useTrackUserAction()
@@ -15,8 +17,8 @@ const usePlayerNameGame = () => {
   const [correctAnswer, setCorrectAnswer] = useState(-1)
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
 
-  const [playRightAnswerSound] = useSound(basketballSwish)
-  const [playWrongAnswerSound] = useSound(basketballRim, { interrupt: true })
+  const [playRightAnswerSound] = useSound(basketballSwish, { volume: 0.4 })
+  const [playWrongAnswerSound] = useSound(basketballRim, { interrupt: true, volume: 0.2 })
 
   const [correctAttempts, setCorrectAttempts] = useState(0)
   const [totalAttempts, setTotalAttempts] = useState(0)
@@ -50,7 +52,7 @@ const usePlayerNameGame = () => {
   }
 
   const checkEndGame = () => {
-    if (totalAttempts === ATTEMPTS_PER_GAME) {
+    if (hasReachedTotalAttempts(totalAttempts)) {
       track('end_game', {
         total_right_answers: correctAttempts,
         total_answers: totalAttempts,
