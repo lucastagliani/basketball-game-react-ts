@@ -30,4 +30,9 @@ describe('<PlayerImage />', () => {
     render(<PlayerImage {...defaultProps} overrideStyles={{ border: '1px solid red' }} />)
     expect(getPlayerImage()).toHaveStyle({ border: '1px solid red' })
   })
+
+  it('should not render player image if playedId is invalid', () => {
+    render(<PlayerImage {...defaultProps} playerId={0} />)
+    expect(screen.queryByRole('img')).not.toBeInTheDocument()
+  })
 })

@@ -29,7 +29,7 @@ const PlayerImage = ({ playerId, altText, className, overrideStyles }: PlayerIma
     ...overrideStyles,
   }
 
-  if (!playerId) {
+  if (playerId <= 0) {
     return null
   }
 
