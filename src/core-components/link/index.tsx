@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 import styled from '@emotion/styled'
-import useTrackingService from '../../features/useTrackingService'
+import useTrackUserAction from '../../features/useTrackUserAction'
 
 type LinkProps = {
   url: string
@@ -21,7 +21,7 @@ const Link = ({
   children,
   target = '_blank',
 }: LinkProps): JSX.Element => {
-  const { track } = useTrackingService()
+  const { track } = useTrackUserAction()
   const onLinkClick = () => {
     track('link_click', {
       aria_label: ariaLabelText,

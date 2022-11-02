@@ -1,17 +1,17 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import GameOverModal from '.'
+import EndGameModal from '.'
 import userEvent from '@testing-library/user-event'
 
 const trackSpy = jest.fn()
 
-jest.mock('../../useTrackingService', () => {
+jest.mock('../../useTrackUserAction', () => {
   return jest.fn(() => ({
     track: trackSpy,
   }))
 })
 
-describe('<GameOverModal />', () => {
+describe('<EndGameModal />', () => {
   beforeEach(() => {
     const props = {
       isModalOpen: true,
@@ -20,7 +20,7 @@ describe('<GameOverModal />', () => {
       onButtonClick: jest.fn(),
     }
 
-    render(<GameOverModal {...props} />)
+    render(<EndGameModal {...props} />)
   })
 
   it('should render modal title', () => {

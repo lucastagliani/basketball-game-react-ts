@@ -1,10 +1,10 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
 import Button from '../../../core-components/Button'
-import useTrackingService from '../../useTrackingService'
-import useGameOverService from './useGameOverService'
+import useTrackUserAction from '../../useTrackUserAction'
+import useEndGame from './useEndGame'
 
-type GameOverModalProps = {
+type EndGameModalProps = {
   isModalOpen: boolean
   totalAttempts: number
   correctAttempts: number
@@ -24,14 +24,14 @@ if (process.env.NODE_ENV !== 'test') {
   Modal.setAppElement('#root')
 }
 
-const GameOverModal = ({
+const EndGameModal = ({
   isModalOpen,
   correctAttempts,
   totalAttempts,
   onButtonClick,
-}: GameOverModalProps) => {
-  const { getSubtitleByScore } = useGameOverService()
-  const { track } = useTrackingService()
+}: EndGameModalProps) => {
+  const { getSubtitleByScore } = useEndGame()
+  const { track } = useTrackUserAction()
 
   const handleButtonClick = () => {
     track('play_again', {
@@ -59,4 +59,4 @@ const GameOverModal = ({
   )
 }
 
-export default GameOverModal
+export default EndGameModal

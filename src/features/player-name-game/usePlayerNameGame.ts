@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
-import useTrackingService from '../useTrackingService'
+import useTrackUserAction from '../useTrackUserAction'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/crowd-booing.mp3'
 
 const ATTEMPTS_PER_GAME = 5
 
-const usePlayerNameGameService = () => {
+const usePlayerNameGame = () => {
   const { fetchNewQuestion } = useQuestionApi()
-  const { track } = useTrackingService()
+  const { track } = useTrackUserAction()
 
   const [correctAnswer, setCorrectAnswer] = useState(-1)
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
@@ -94,4 +94,4 @@ const usePlayerNameGameService = () => {
   }
 }
 
-export default usePlayerNameGameService
+export default usePlayerNameGame
