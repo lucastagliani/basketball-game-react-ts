@@ -2,6 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import EndGameModal from '.'
 import userEvent from '@testing-library/user-event'
+import { renderRootElementForReactModal } from '../../../test-utils'
 
 const trackSpy = jest.fn()
 
@@ -20,6 +21,7 @@ describe('<EndGameModal />', () => {
       onButtonClick: jest.fn(),
     }
 
+    renderRootElementForReactModal()
     render(<EndGameModal {...props} />)
   })
 

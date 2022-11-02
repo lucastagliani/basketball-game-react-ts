@@ -20,16 +20,14 @@ const customStyles: Styles = {
   },
 }
 
-if (process.env.NODE_ENV !== 'test') {
-  Modal.setAppElement('#root')
-}
-
 const EndGameModal = ({
   isModalOpen,
   correctAttempts,
   totalAttempts,
   onButtonClick,
 }: EndGameModalProps) => {
+  Modal.setAppElement('#root')
+
   const { getSubtitleByScore } = useEndGame()
   const { track } = useTrackUserAction()
 

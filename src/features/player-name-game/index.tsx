@@ -23,7 +23,7 @@ const PlayerNameGameContainer = styled.div`
 
 const spinnerStyles: CSSProperties = {
   margin: 'auto',
-  height: 400,
+  height: 500,
   position: 'relative',
   top: 150,
 }
