@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Score from './Score'
+import Score from '.'
 
 describe('<Score />', () => {
   it('should render 2 / 3 when 3 attempts and 2 correct', () => {

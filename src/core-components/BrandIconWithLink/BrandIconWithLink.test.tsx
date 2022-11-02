@@ -7,9 +7,9 @@ describe('<BrandIconWithLink />', () => {
     const props = {
       faCode: 'github',
       ariaLabelText: 'Github',
-      url: 'http://github.com'
+      url: 'http://github.com',
     }
     render(<BrandIconWithLink {...props} />)
-    expect(screen.getByRole('link', {name: 'Github'})).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Github' })).toBeInTheDocument()
   })
 })

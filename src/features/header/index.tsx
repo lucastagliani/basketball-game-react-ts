@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import background from './basketball-in-court-by-tjdragotta-from-unplash.png'
+import background from './assets/basketball-in-court-by-tjdragotta-from-unplash.png'
 
 const AppHeader = styled.header`
   background-color: #282c34;

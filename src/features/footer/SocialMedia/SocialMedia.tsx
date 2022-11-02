@@ -1,5 +1,5 @@
 import React from 'react'
-import BrandIconWithLink from '../../core-components/brand-icon-with-link'
+import BrandIconWithLink from '../../../core-components/BrandIconWithLink'
 
 type SocialMediaItem = {
   faCode: string
