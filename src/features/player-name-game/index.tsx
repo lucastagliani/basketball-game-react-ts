@@ -4,9 +4,9 @@ import PlayerImage from './PlayerImage'
 import Timer from '../../core-components/Timer'
 import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
-import usePlayerNameGameService from './usePlayerNameGameService'
+import usePlayerNameGame from './usePlayerNameGame'
 import RiseLoader from 'react-spinners/RiseLoader'
-import GameOverModal from './GameOverModal'
+import EndGameModal from './EndGameModal'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)
@@ -38,7 +38,7 @@ const PlayerNameGame = (): JSX.Element => {
     alternativies,
     answerQuestion,
     getNewQuestion,
-  } = usePlayerNameGameService()
+  } = usePlayerNameGame()
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -77,7 +77,7 @@ const PlayerNameGame = (): JSX.Element => {
       ) : (
         <RiseLoader size={30} color={'#999'} cssOverride={spinnerStyles} />
       )}
-      <GameOverModal {...modalProps} />
+      <EndGameModal {...modalProps} />
     </PlayerNameGameContainer>
   )
 }

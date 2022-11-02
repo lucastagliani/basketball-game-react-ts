@@ -1,4 +1,4 @@
-const gameOverSubtitules = [
+const endGameSubtitules = [
   [
     'Were you actually trying to do it right?',
     'Uh, you are unlucky',
@@ -24,7 +24,7 @@ const gameOverSubtitules = [
   ],
 ]
 
-const useGameOverService = () => {
+const useEndGame = () => {
   const getNumberWithinRange = (number: number, min: number, max: number) =>
     number > max ? max : number < min ? min : number
 
@@ -33,10 +33,10 @@ const useGameOverService = () => {
 
   const getSubtitleByScore = (score: number): string => {
     const arrayPosition = getNumberWithinRange(score, 0, 5)
-    return getRandomSubtitle(gameOverSubtitules[arrayPosition])
+    return getRandomSubtitle(endGameSubtitules[arrayPosition])
   }
 
   return { getSubtitleByScore }
 }
 
-export default useGameOverService
+export default useEndGame

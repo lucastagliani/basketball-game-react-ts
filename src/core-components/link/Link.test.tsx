@@ -2,11 +2,10 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Link from '.'
-// import * as useTrackingService from '../../features/useTrackingService'
 
 const trackSpy = jest.fn()
 
-jest.mock('../../features/useTrackingService', () => {
+jest.mock('../../features/useTrackUserAction', () => {
   return jest.fn(() => ({
     track: trackSpy,
   }))

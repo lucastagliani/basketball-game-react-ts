@@ -18,7 +18,7 @@ jest.mock('axios', () => ({
 
 const trackSpy = jest.fn()
 
-jest.mock('../useTrackingService', () => {
+jest.mock('../useTrackUserAction', () => {
   return jest.fn(() => ({
     track: trackSpy,
   }))
