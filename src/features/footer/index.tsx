@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import SocialMedia from './SocialMedia'
-import CheckoutCodeText from './CheckoutCodeText'
+import SocialMedia from './SocialMedia/SocialMedia'
+import CheckoutCodeText from './CheckoutCodeText/CheckoutCodeText'
 import { useMediaQuery } from 'react-responsive'
 
 type ContainerProps = {

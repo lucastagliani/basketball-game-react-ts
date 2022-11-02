@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
-import Button from '../../../core-components/button'
+import Button from '../../../core-components/Button'
 import useTrackingService from '../../useTrackingService'
 import useGameOverService from './useGameOverService'
 

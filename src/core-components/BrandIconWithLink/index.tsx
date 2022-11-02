@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../link'
+import Link from '../Link'
 
 type BrandIconWithLinkProps = {
   faCode: string
@@ -8,11 +8,11 @@ type BrandIconWithLinkProps = {
 }
 
 const linkStyles = {
-  fontSize: '1.2rem', 
-  margin: '0.2rem'
+  fontSize: '1.2rem',
+  margin: '0.2rem',
 }
 
-const BrandIconWithLink = ({faCode, ariaLabelText, url}: BrandIconWithLinkProps): JSX.Element => {
+const BrandIconWithLink = ({ faCode, ariaLabelText, url }: BrandIconWithLinkProps): JSX.Element => {
   const iconClassName = `fa-brands fa-${faCode}`
   return (
     <Link url={url} ariaLabelText={ariaLabelText} stylesOverride={linkStyles}>
