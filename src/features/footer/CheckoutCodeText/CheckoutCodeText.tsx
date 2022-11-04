@@ -10,7 +10,7 @@ const CheckoutCodeText = (): JSX.Element => {
   return (
     <Text>
       Checkout the code behind:&nbsp;
-      <Link url="https://github.com/lucastagliani/nba-info-react-ts" ariaLabelText="UI">
+      <Link url="https://github.com/lucastagliani/basketball-game-react-ts" ariaLabelText="UI">
         UI
       </Link>
       &nbsp;and&nbsp;
