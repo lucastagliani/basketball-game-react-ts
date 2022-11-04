@@ -14,7 +14,7 @@ describe('<CheckoutCodeText />', () => {
   it('renders UI repo link', () => {
     expect(screen.getByRole('link', { name: 'UI' })).toHaveAttribute(
       'href',
-      'https://github.com/lucastagliani/nba-info-react-ts',
+      'https://github.com/lucastagliani/basketball-game-react-ts',
     )
   })
 
