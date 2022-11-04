@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
-import Button from '../../../core-components/Button'
-import useTrackUserAction from '../../useTrackUserAction'
+import Button from 'core-components/Button'
+import useTrackUserAction from 'features/useTrackUserAction'
 import useEndGame from './useEndGame'
 
 type EndGameModalProps = {
