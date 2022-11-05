@@ -11,7 +11,7 @@
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
     "type-check": "tsc --noEmit",
-    "test": "jest --maxWorkers=2 --modulePaths=src",
+    "test": "jest --maxWorkers=2",
     "test:ci": "npm run type-check && npm run test",
     "test:watch": "react-scripts test",
     "verify": "npm run lint && npm run type-check && npm run test"

@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 import styled from '@emotion/styled'
-import useTrackUserAction from 'features/useTrackUserAction'
+import useTrackUserAction from '../../features/useTrackUserAction'
 
 type LinkProps = {
   url: string
