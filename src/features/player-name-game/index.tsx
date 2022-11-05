@@ -4,7 +4,7 @@ import PlayerImage from './PlayerImage'
 import Timer from 'core-components/Timer'
 import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
-import usePlayerNameGame from './usePlayerNameGame'
+import useGame from './useGame'
 import RiseLoader from 'react-spinners/RiseLoader'
 import EndGameModal from './EndGameModal'
 
@@ -34,11 +34,11 @@ const PlayerNameGame = (): JSX.Element => {
     correctAttempts,
     isTimerRunning,
     isModalOpen,
+    answerQuestion,
     correctAnswer,
     alternativies,
-    answerQuestion,
     getNewQuestion,
-  } = usePlayerNameGame()
+  } = useGame()
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()

@@ -1,21 +1,17 @@
 import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
-import { AlternativeOption } from './types'
-import useQuestionApi from './useQuestionApi'
 import useTrackUserAction from '../useTrackUserAction'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/crowd-booing.mp3'
+import { useQuestion } from './useQuestion'
 
 const ATTEMPTS_PER_GAME = 5
 
 const hasReachedTotalAttempts = (totalAttempts: number) => totalAttempts === ATTEMPTS_PER_GAME
 
-const usePlayerNameGame = () => {
-  const { fetchNewQuestion } = useQuestionApi()
+const useGame = () => {
   const { track } = useTrackUserAction()
-
-  const [correctAnswer, setCorrectAnswer] = useState(-1)
-  const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
+  const { alternativies, correctAnswer, isAnswerCorrect, getNewQuestion } = useQuestion()
 
   const [playRightAnswerSound] = useSound(basketballSwish, { volume: 0.4 })
   const [playWrongAnswerSound] = useSound(basketballRim, { interrupt: true, volume: 0.2 })
@@ -27,24 +23,18 @@ const usePlayerNameGame = () => {
   const [isTimerRunning, setIsTimerRunning] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const getNewQuestion = async () => {
-    const { correctAnswerKey, alternativeOptions } = await fetchNewQuestion()
-    setCorrectAnswer(correctAnswerKey)
-    setAlternativies(alternativeOptions)
-  }
-
   const checkUserAnswer = () => {
-    if (userAnswer === 0 || correctAnswer === 0) {
+    if (userAnswer === 0) {
       return
     }
 
-    const isRightAnswer = userAnswer === correctAnswer
+    const isCorrect = isAnswerCorrect(userAnswer)
     track('user_answer', {
-      is_correct: isRightAnswer,
+      is_correct: isCorrect,
       attempt_number: totalAttempts,
     })
 
-    if (isRightAnswer) {
+    if (isCorrect) {
       playRightAnswerSound()
     } else {
       playWrongAnswerSound()
@@ -67,17 +57,13 @@ const usePlayerNameGame = () => {
       setIsTimerRunning(true)
     }
 
-    if (newUserAnswer === correctAnswer) {
+    if (isAnswerCorrect(newUserAnswer)) {
       setCorrectAttempts(correctAttempts + 1)
     }
 
     setUserAnswer(newUserAnswer)
     setTotalAttempts(totalAttempts + 1)
   }
-
-  useEffect(() => {
-    getNewQuestion()
-  }, [])
 
   useEffect(() => {
     checkUserAnswer()
@@ -89,11 +75,11 @@ const usePlayerNameGame = () => {
     correctAttempts,
     isTimerRunning,
     isModalOpen,
-    correctAnswer,
-    alternativies,
     answerQuestion,
+    alternativies,
+    correctAnswer,
     getNewQuestion,
   }
 }
 
-export default usePlayerNameGame
+export default useGame
