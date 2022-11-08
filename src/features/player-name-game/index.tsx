@@ -30,13 +30,10 @@ const spinnerStyles: CSSProperties = {
 
 const PlayerNameGame = (): JSX.Element => {
   const {
-    totalAttempts,
-    correctAttempts,
-    isTimerRunning,
-    isModalOpen,
+    gameData: { totalAttempts, correctAttempts },
+    gameControls: { isTimerRunning, isModalOpen },
+    questionData: { alternativies, correctAnswer },
     answerQuestion,
-    correctAnswer,
-    alternativies,
     getNewQuestion,
     resetGame,
   } = useGame()
