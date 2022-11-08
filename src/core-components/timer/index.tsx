@@ -1,15 +1,9 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
 
 enum Unit {
   Minute,
   Second,
   Milisecond,
-}
-
-type TimerProps = {
-  isRunning?: boolean
-  initialTime?: number
 }
 
 const unitsParameters = {
@@ -41,21 +35,7 @@ const getTimeToDisplay = (time: number) => {
   return { minutesToDisplay, secondsToDisplay, milisecondsToDisplay }
 }
 
-let interval: NodeJS.Timeout
-
-const Timer = ({ isRunning = false, initialTime }: TimerProps) => {
-  const [time, setTime] = useState(initialTime ?? 0)
-
-  useEffect(() => {
-    if (isRunning) {
-      interval = setInterval(() => {
-        setTime(prevTime => prevTime + 100)
-      }, 100)
-    } else if (interval) {
-      clearInterval(interval)
-    }
-  }, [isRunning])
-
+const Timer = ({ time }: { time: number }) => {
   const { minutesToDisplay, secondsToDisplay, milisecondsToDisplay } = getTimeToDisplay(time)
 
   return (

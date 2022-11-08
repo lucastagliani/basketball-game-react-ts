@@ -30,9 +30,9 @@ const spinnerStyles: CSSProperties = {
 
 const PlayerNameGame = (): JSX.Element => {
   const {
-    gameData: { totalAttempts, correctAttempts },
-    gameControls: { isTimerRunning, isModalOpen },
+    gameData: { totalAttempts, correctAttempts, time },
     questionData: { alternativies, correctAnswer },
+    isModalOpen,
     answerQuestion,
     getNewQuestion,
     resetGame,
@@ -66,7 +66,7 @@ const PlayerNameGame = (): JSX.Element => {
         correct={correctAttempts}
         textBeforeScore={'Your current score is:'}
       />
-      <Timer isRunning={isTimerRunning} />
+      <Timer time={time} />
       {alternativies?.length > 0 ? (
         <>
           <PlayerImage altText="player" playerId={correctAnswer} />
