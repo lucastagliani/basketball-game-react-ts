@@ -38,6 +38,7 @@ const PlayerNameGame = (): JSX.Element => {
     correctAnswer,
     alternativies,
     getNewQuestion,
+    resetGame,
   } = useGame()
 
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -50,7 +51,7 @@ const PlayerNameGame = (): JSX.Element => {
   }
 
   const onButtonClick = () => {
-    window.location.reload()
+    resetGame()
   }
 
   const modalProps = {
