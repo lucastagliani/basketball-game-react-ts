@@ -65,6 +65,14 @@ const useGame = () => {
     setTotalAttempts(totalAttempts + 1)
   }
 
+  const resetGame = () => {
+    setIsTimerRunning(false)
+    setCorrectAttempts(0)
+    setTotalAttempts(0)
+    setUserAnswer(0)
+    setIsModalOpen(false)
+  }
+
   useEffect(() => {
     checkUserAnswer()
     checkEndGame()
@@ -79,6 +87,7 @@ const useGame = () => {
     alternativies,
     correctAnswer,
     getNewQuestion,
+    resetGame,
   }
 }
 
