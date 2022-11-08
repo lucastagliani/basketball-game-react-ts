@@ -68,13 +68,19 @@ const useGame = () => {
   }, [totalAttempts])
 
   return {
-    totalAttempts,
-    correctAttempts,
-    isTimerRunning,
-    isModalOpen,
+    gameData: {
+      totalAttempts,
+      correctAttempts,
+    },
+    gameControls: {
+      isTimerRunning,
+      isModalOpen,
+    },
+    questionData: {
+      alternativies,
+      correctAnswer,
+    },
     answerQuestion,
-    alternativies,
-    correctAnswer,
     getNewQuestion,
     resetGame,
   }
