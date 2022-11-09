@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
-import { useTimer } from '../../core-components/Timer2/useTimer'
+import { useTimer } from '../../core-components/Timer/useTimer'
 import useTrackUserAction from '../useTrackUserAction'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/crowd-booing.mp3'

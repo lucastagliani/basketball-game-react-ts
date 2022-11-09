@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import Button from '../../../core-components/Button2'
+import Button from '../../../core-components/Button'
 import { AlternativeOption } from '../types'
 
 type AnswerOptionsProps = {

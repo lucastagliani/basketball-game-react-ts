@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../Link2'
+import Link from '../Link'
 
 type BrandIconWithLinkProps = {
   faCode: string
