@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
-import Button from '../../../core-components/Button'
+import Button from '../../../core-components/Button2'
 import useTrackUserAction from '../../useTrackUserAction'
 import useEndGame from './useEndGame'
 
