@@ -104,6 +104,7 @@ describe('<PlayerNameGame />', () => {
     expect(trackSpy).toBeCalledWith('end_game', {
       total_right_answers: 2,
       total_answers: 5,
+      time_in_seconds: 0,
     })
   })
 })

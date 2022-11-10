@@ -25,11 +25,12 @@ const useGame = () => {
 
   const checkEndGame = () => {
     if (hasReachedTotalAttempts(totalAttempts)) {
+      setIsTimerRunning(false)
       track('end_game', {
         total_right_answers: correctAttempts,
         total_answers: totalAttempts,
+        time_in_seconds: time,
       })
-      setIsTimerRunning(false)
       setIsModalOpen(true)
     }
   }
