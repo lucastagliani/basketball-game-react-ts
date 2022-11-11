@@ -29,7 +29,7 @@ const useGame = () => {
       track('end_game', {
         total_right_answers: correctAttempts,
         total_answers: totalAttempts,
-        time_in_seconds: time,
+        time_in_seconds: time / 1000,
       })
       setIsModalOpen(true)
     }
