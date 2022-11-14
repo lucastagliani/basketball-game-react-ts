@@ -16,7 +16,7 @@ This personal project was created for fun, it might not use the best tools or pr
 
 ## Tracked user data (Mixpanel)
 
-This project uses Mixpanel to keep track of user actions. Here is the dashboard created so far.
+This project uses Mixpanel to keep track of user actions. Below there is a screenshot of the dashboard.
 
 ![Image](readme-assets/mixpanel-dashboard.jpeg 'Basketbal Game Dashboard in Mixpanel. It contains a conversion funil and a pie chart.')
 
