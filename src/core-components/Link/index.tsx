@@ -1,11 +1,12 @@
-import React, { CSSProperties } from 'react'
-import styled from '@emotion/styled'
+/** @jsxImportSource @emotion/react */
+import React from 'react'
+import styled, { CSSObject } from '@emotion/styled'
 import useTrackUserAction from '../../features/useTrackUserAction'
 
 type LinkProps = {
   url: string
   ariaLabelText: string
-  stylesOverride?: CSSProperties
+  stylesOverride?: CSSObject
   children: React.ReactNode
   target?: string
 }
@@ -34,7 +35,7 @@ const Link = ({
       href={url}
       aria-label={ariaLabelText}
       rel="noreferrer"
-      style={stylesOverride}
+      css={stylesOverride}
       onClick={onLinkClick}>
       {children}
     </StyledLink>
