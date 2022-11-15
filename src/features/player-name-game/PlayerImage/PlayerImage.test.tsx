@@ -23,7 +23,7 @@ describe('<PlayerImage />', () => {
 
   it('should render player image with passed className', () => {
     render(<PlayerImage {...defaultProps} className="my-custom-class-name" />)
-    expect(getPlayerImage().getAttribute('class')).toBe('my-custom-class-name')
+    expect(getPlayerImage()).toHaveClass('my-custom-class-name')
   })
 
   it('should render player image with passed styles', () => {

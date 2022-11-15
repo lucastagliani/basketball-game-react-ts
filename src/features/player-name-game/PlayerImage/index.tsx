@@ -1,14 +1,16 @@
-import React, { CSSProperties } from 'react'
+/** @jsxImportSource @emotion/react */
+import { CSSObject } from '@emotion/react'
+import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 type PlayerImageProps = {
   altText: string
   playerId: number
   className?: string
-  overrideStyles?: CSSProperties
+  overrideStyles?: CSSObject
 }
 
-const getDefaultStyles = (isMobile: boolean): CSSProperties => {
+const getDefaultStyles = (isMobile: boolean): CSSObject => {
   return isMobile
     ? {
       maxWidth: '100%',
@@ -38,7 +40,7 @@ const PlayerImage = ({ playerId, altText, className, overrideStyles }: PlayerIma
       alt={altText}
       src={`${BASE_URL_PLAYER_IMAGE}${playerId}.${FILE_EXTENSION_PLAYER_IMAGE}`}
       className={className}
-      style={style}
+      css={style}
     />
   )
 }
