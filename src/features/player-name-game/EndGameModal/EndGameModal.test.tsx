@@ -27,7 +27,7 @@ describe('<EndGameModal />', () => {
   })
 
   it('should render modal title', () => {
-    expect(screen.getByText('The game is over!')).toBeInTheDocument()
+    expect(screen.getByText('The game has ended!')).toBeInTheDocument()
   })
 
   it('should render score text and time correctly', () => {

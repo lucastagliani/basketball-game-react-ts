@@ -48,8 +48,8 @@ const EndGameModal = ({
   }
 
   return (
-    <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Game over modal">
-      <h2>The game is over!</h2>
+    <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Game ended modal">
+      <h2>The game has ended!</h2>
       <p>
         <span>
           You scored {correctAttempts} out of {totalAttempts} in <Timer time={time} />
