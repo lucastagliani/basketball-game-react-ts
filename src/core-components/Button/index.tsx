@@ -1,14 +1,16 @@
-import React, { CSSProperties, useState } from 'react'
+/** @jsxImportSource @emotion/react */
+import { CSSObject } from '@emotion/react'
+import React, { useState } from 'react'
 
 interface ButtonProps {
   children: React.ReactNode
   value?: string
   className?: string
-  overrideStyles?: CSSProperties
+  overrideStyles?: CSSObject
   onButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const defaultStyle: CSSProperties = {
+const defaultStyle: CSSObject = {
   backgroundColor: 'white',
   border: '2px solid #555',
   color: 'black',
@@ -24,7 +26,7 @@ const defaultStyle: CSSProperties = {
   height: '55px',
 }
 
-const hoverStyle: CSSProperties = {
+const hoverStyle = {
   backgroundColor: '#555',
   color: 'white',
   cursor: 'pointer',
@@ -42,7 +44,7 @@ const Button = ({
   const handleOnMouseIn = () => setIsHovered(true)
   const handleOnMouseOut = () => setIsHovered(false)
 
-  const style = {
+  const style: CSSObject = {
     ...defaultStyle,
     ...overrideStyles,
     ...(isHovered && hoverStyle),
@@ -54,7 +56,7 @@ const Button = ({
       value={value}
       className={className}
       onClick={onButtonClick}
-      style={style}
+      css={style}
       onMouseEnter={handleOnMouseIn}
       onMouseLeave={handleOnMouseOut}>
       {children}
