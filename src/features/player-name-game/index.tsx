@@ -55,6 +55,7 @@ const PlayerNameGame = (): JSX.Element => {
     isModalOpen,
     correctAttempts,
     totalAttempts,
+    time,
     onButtonClick,
   }
 
@@ -66,7 +67,9 @@ const PlayerNameGame = (): JSX.Element => {
         correct={correctAttempts}
         textBeforeScore={'Your current score is:'}
       />
-      <Timer time={time} />
+      <div>
+        <Timer time={time} />
+      </div>
       {alternativies?.length > 0 ? (
         <>
           <PlayerImage altText="player" playerId={correctAnswer} />

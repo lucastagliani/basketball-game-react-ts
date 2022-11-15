@@ -18,6 +18,7 @@ describe('<EndGameModal />', () => {
       isModalOpen: true,
       correctAttempts: 4,
       totalAttempts: 5,
+      time: 0,
       onButtonClick: jest.fn(),
     }
 
@@ -29,8 +30,8 @@ describe('<EndGameModal />', () => {
     expect(screen.getByText('The game is over!')).toBeInTheDocument()
   })
 
-  it('should render score text correctly', () => {
-    expect(screen.getByText('You scored 4 out of 5')).toBeInTheDocument()
+  it('should render score text and time correctly', () => {
+    expect(screen.getByText(/you scored 4 out of 5/i)).toBeInTheDocument()
   })
 
   it('should render modal button', () => {

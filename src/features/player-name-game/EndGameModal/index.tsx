@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal, { Styles } from 'react-modal'
 import Button from '../../../core-components/Button'
+import Timer from '../../../core-components/Timer'
 import useTrackUserAction from '../../useTrackUserAction'
 import useEndGame from './useEndGame'
 
@@ -8,6 +9,7 @@ type EndGameModalProps = {
   isModalOpen: boolean
   totalAttempts: number
   correctAttempts: number
+  time: number
   onButtonClick: (event?: React.MouseEvent<HTMLButtonElement>) => void
 }
 
@@ -24,6 +26,7 @@ const EndGameModal = ({
   isModalOpen,
   correctAttempts,
   totalAttempts,
+  time,
   onButtonClick,
 }: EndGameModalProps) => {
   Modal.setAppElement('#root')
@@ -48,7 +51,9 @@ const EndGameModal = ({
     <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Game over modal">
       <h2>The game is over!</h2>
       <p>
-        You scored {correctAttempts} out of {totalAttempts}
+        <span>
+          You scored {correctAttempts} out of {totalAttempts} in <Timer time={time} />
+        </span>
       </p>
       <p>{getSubtitleByScore(correctAttempts)}</p>
       {/* <p>Share it with your friends... (TODO)</p> */}

@@ -39,11 +39,9 @@ const Timer = ({ time }: { time: number }) => {
   const { minutesToDisplay, secondsToDisplay, milisecondsToDisplay } = getTimeToDisplay(time)
 
   return (
-    <div>
-      <span>
-        {minutesToDisplay}:{secondsToDisplay}.{milisecondsToDisplay}
-      </span>
-    </div>
+    <span>
+      {minutesToDisplay}:{secondsToDisplay}.{milisecondsToDisplay}
+    </span>
   )
 }
 
