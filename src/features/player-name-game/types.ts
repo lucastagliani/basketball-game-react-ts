@@ -8,3 +8,10 @@ export type Question = {
   alternativeOptions: AlternativeOption[]
   image: string
 }
+
+export enum GameLevel {
+  Easy = 'easy',
+  Regular = 'regular',
+  Hard = 'hard',
+  Impossible = 'impossible',
+}

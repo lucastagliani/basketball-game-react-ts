@@ -4,6 +4,7 @@ import { useTimer } from '../../core-components/Timer/useTimer'
 import useTrackUserAction from '../useTrackUserAction'
 import basketballSwish from './sounds/basketball-swish.mp3'
 import basketballRim from './sounds/crowd-booing.mp3'
+import { GameLevel } from './types'
 import { useQuestion } from './useQuestion'
 
 const ATTEMPTS_PER_GAME = 5
@@ -12,7 +13,10 @@ const hasReachedTotalAttempts = (totalAttempts: number) => totalAttempts === ATT
 
 const useGame = () => {
   const { track } = useTrackUserAction()
-  const { alternativies, correctAnswer, isAnswerCorrect, getNewQuestion } = useQuestion()
+  const { alternativies, correctAnswer, isAnswerCorrect, getNewQuestion } = useQuestion(
+    GameLevel.Regular,
+  )
+
   const { time, setTime, isTimerRunning, setIsTimerRunning } = useTimer({})
 
   const [playRightAnswerSound] = useSound(basketballSwish, { volume: 0.4 })

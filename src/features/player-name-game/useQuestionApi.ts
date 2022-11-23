@@ -1,17 +1,22 @@
 import axios from 'axios'
-import { Question } from './types'
+import { GameLevel, Question } from './types'
 
 const BASE_URL =
   process.env.REACT_APP_NODE_ENV === 'production'
     ? 'https://nba-api-nodejs.herokuapp.com'
     : 'http://localhost:8080'
 
-const useQuestionApi = () => {
+const useQuestionApi = (level: GameLevel) => {
   const endpoint = '/questions'
+  const options = {
+    params: {
+      level,
+    },
+  }
 
   const fetchNewQuestion = async () => {
     try {
-      const response = await axios.get<Question>(`${BASE_URL}${endpoint}`)
+      const response = await axios.get<Question>(`${BASE_URL}${endpoint}`, options)
       return response?.data || {}
     } catch (error) {
       throw new Error(error as string)
