@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { AlternativeOption, GameLevel } from './types'
+import { AlternativeOption } from './types'
 import useQuestionApi from './useQuestionApi'
 
-export const useQuestion = (level: GameLevel) => {
-  const { fetchNewQuestion } = useQuestionApi(level)
+export const useQuestion = () => {
+  const { fetchNewQuestion } = useQuestionApi()
 
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
   const [correctAnswer, setCorrectAnswer] = useState(-1)

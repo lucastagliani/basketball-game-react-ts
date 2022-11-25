@@ -6,11 +6,13 @@ const BASE_URL =
     ? 'https://nba-api-nodejs.herokuapp.com'
     : 'http://localhost:8080'
 
-const useQuestionApi = (level: GameLevel) => {
+const useQuestionApi = (level?: GameLevel) => {
   const endpoint = '/questions'
+  const params = new URLSearchParams(window.location.search)
+
   const options = {
     params: {
-      level,
+      level: level || params.get('level'),
     },
   }
 
