@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+
 import PlayerNameGame from '.'
 import { questionsApiMockedData } from './__mocks__/questionsApiMockedData'
 import { renderRootElementForReactModal } from '../../test-utils'

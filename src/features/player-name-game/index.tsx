@@ -1,12 +1,13 @@
 import React, { CSSProperties } from 'react'
-import Score from '../../core-components/Score'
-import PlayerImage from './PlayerImage'
-import Timer from '../../core-components/Timer'
-import AnswerOptions from './AnswerOptions'
 import styled from '@emotion/styled'
-import useGame from './useGame'
-import RiseLoader from 'react-spinners/RiseLoader'
+
+import AnswerOptions from './AnswerOptions'
 import EndGameModal from './EndGameModal'
+import PlayerImage from './PlayerImage'
+import RiseLoader from 'react-spinners/RiseLoader'
+import Score from '../../core-components/Score'
+import Timer from '../../core-components/Timer'
+import useGame from './useGame'
 
 const getUserAnswerFromEvent = (event: React.MouseEvent<HTMLButtonElement>): number => {
   return parseInt(event.currentTarget.value)

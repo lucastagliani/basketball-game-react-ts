@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 import { GameLevel, Question } from './types'
 
 const BASE_URL =

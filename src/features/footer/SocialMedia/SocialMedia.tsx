@@ -1,4 +1,5 @@
 import React from 'react'
+
 import BrandIconWithLink from '../../../core-components/BrandIconWithLink'
 
 type SocialMediaItem = {

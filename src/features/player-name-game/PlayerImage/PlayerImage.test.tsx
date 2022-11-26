@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { ByRoleOptions, render, screen } from '@testing-library/react'
+
 import PlayerImage from '.'
 
 const getPlayerImage = (options?: ByRoleOptions): HTMLElement => screen.getByRole('img', options)

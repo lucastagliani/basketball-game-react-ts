@@ -1,7 +1,8 @@
-import styled from '@emotion/styled'
 import React from 'react'
-import Button from '../../../core-components/Button'
+import styled from '@emotion/styled'
+
 import { AlternativeOption } from '../types'
+import Button from '../../../core-components/Button'
 
 type AnswerOptionsProps = {
   alternativies: AlternativeOption[]

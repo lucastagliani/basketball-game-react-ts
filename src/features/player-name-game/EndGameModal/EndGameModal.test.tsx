@@ -1,8 +1,10 @@
 import React from 'react'
+
 import { render, screen } from '@testing-library/react'
+
 import EndGameModal from '.'
-import userEvent from '@testing-library/user-event'
 import { renderRootElementForReactModal } from '../../../test-utils'
+import userEvent from '@testing-library/user-event'
 
 const trackSpy = jest.fn()
 

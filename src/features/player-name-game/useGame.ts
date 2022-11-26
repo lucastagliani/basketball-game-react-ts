@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
+
+import basketballRim from './sounds/crowd-booing.mp3'
+import basketballSwish from './sounds/basketball-swish.mp3'
+import { useQuestion } from './useQuestion'
 import { useTimer } from '../../core-components/Timer/useTimer'
 import useTrackUserAction from '../useTrackUserAction'
-import basketballSwish from './sounds/basketball-swish.mp3'
-import basketballRim from './sounds/crowd-booing.mp3'
-import { useQuestion } from './useQuestion'
 
 const ATTEMPTS_PER_GAME = 5
 

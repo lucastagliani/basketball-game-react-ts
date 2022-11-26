@@ -18,12 +18,19 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    indent: "off",
+    indent: 'off',
     '@typescript-eslint/indent': ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'max-len': ['error', { code: 100 }],
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        allowSeparatedGroups: true,
+      },
+    ],
   },
   settings: {
     react: {

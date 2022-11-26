@@ -1,9 +1,10 @@
-import React from 'react'
 import Modal, { Styles } from 'react-modal'
+import React from 'react'
+
 import Button from '../../../core-components/Button'
 import Timer from '../../../core-components/Timer'
-import useTrackUserAction from '../../useTrackUserAction'
 import useEndGame from './useEndGame'
+import useTrackUserAction from '../../useTrackUserAction'
 
 type EndGameModalProps = {
   isModalOpen: boolean
