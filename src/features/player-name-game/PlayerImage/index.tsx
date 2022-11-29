@@ -1,7 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { CSSObject } from '@emotion/react'
 import React from 'react'
+import ReactImageFallback from 'react-image-fallback'
 import { useMediaQuery } from 'react-responsive'
+
+import fallbackImage from './player-fallback.png'
 
 type PlayerImageProps = {
   altText: string
@@ -35,10 +38,13 @@ const PlayerImage = ({ playerId, altText, className, overrideStyles }: PlayerIma
     return null
   }
 
+  const src = `${BASE_URL_PLAYER_IMAGE}${playerId}.${FILE_EXTENSION_PLAYER_IMAGE}`
+
   return (
-    <img
+    <ReactImageFallback
       alt={altText}
-      src={`${BASE_URL_PLAYER_IMAGE}${playerId}.${FILE_EXTENSION_PLAYER_IMAGE}`}
+      src={src}
+      fallbackImage={[fallbackImage]}
       className={className}
       css={style}
     />
