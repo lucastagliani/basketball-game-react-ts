@@ -19,6 +19,21 @@ jest.mock('axios', () => ({
   },
 }))
 
+jest.mock('react-image-fallback', () => {
+  const imgComponent = ({
+    alt,
+    src,
+    className,
+  }: {
+    alt: string
+    src: string
+    className: string
+  }) => {
+    return <img src={src} alt={alt} className={className} />
+  }
+  return imgComponent
+})
+
 const trackSpy = jest.fn()
 
 jest.mock('../useTrackUserAction', () => {

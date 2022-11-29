@@ -4,6 +4,21 @@ import { ByRoleOptions, render, screen } from '@testing-library/react'
 
 import PlayerImage from '.'
 
+jest.mock('react-image-fallback', () => {
+  const imgComponent = ({
+    alt,
+    src,
+    className,
+  }: {
+    alt: string
+    src: string
+    className: string
+  }) => {
+    return <img src={src} alt={alt} className={className} />
+  }
+  return imgComponent
+})
+
 const getPlayerImage = (options?: ByRoleOptions): HTMLElement => screen.getByRole('img', options)
 
 const defaultProps = {
