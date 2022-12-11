@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { AlternativeOption } from './types'
-import useQuestionApi from './useQuestionApi'
+import useApi from '../useApi'
 
 export const useQuestion = () => {
-  const { fetchNewQuestion } = useQuestionApi()
+  const { fetchNewQuestion } = useApi()
 
   const [alternativies, setAlternativies] = useState<AlternativeOption[]>([])
   const [correctAnswer, setCorrectAnswer] = useState(-1)

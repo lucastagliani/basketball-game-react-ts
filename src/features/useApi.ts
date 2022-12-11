@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-import { GameLevel, Question } from './types'
+import { GameLevel, Question } from './player-name-game/types'
 
 const BASE_URL =
   process.env.REACT_APP_NODE_ENV === 'production'
     ? 'https://nba-api-nodejs.onrender.com'
     : 'http://localhost:8080'
 
-const useQuestionApi = (level?: GameLevel) => {
+const useApi = (level?: GameLevel) => {
   const endpoint = '/questions'
   const params = new URLSearchParams(window.location.search)
 
@@ -29,4 +29,4 @@ const useQuestionApi = (level?: GameLevel) => {
   return { fetchNewQuestion }
 }
 
-export default useQuestionApi
+export default useApi
