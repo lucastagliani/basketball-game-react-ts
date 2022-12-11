@@ -33,6 +33,7 @@
     "react-image-fallback": "^8.0.0",
     "react-modal": "^3.16.1",
     "react-responsive": "^9.0.0",
+    "react-router-dom": "^6.4.5",
     "react-scripts": "^5.0.1",
     "react-spinners": "^0.13.6",
     "typescript": "^4.4.2",
