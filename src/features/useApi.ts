@@ -30,8 +30,8 @@ const useApi = (level?: GameLevel) => {
     const endpoint = '/players'
     const filter = '?min_lastYear=1995&min_score=40'
     try {
-      const response = await axios.get<Player>(`${BASE_URL}${endpoint}${filter}`)
-      return response?.data || {}
+      const response = await axios.get<Player[]>(`${BASE_URL}${endpoint}${filter}`)
+      return response?.data || []
     } catch (error) {
       throw new Error(error as string)
     }
