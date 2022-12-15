@@ -13,6 +13,8 @@ const PlayerMiniImage = styled.img`
   height: 50px;
 `
 
+// Work in progress!!!! This code is not easy available to end users
+
 export const PlayersList = () => {
   const { fetchPlayers } = useApi()
 
@@ -29,6 +31,7 @@ export const PlayersList = () => {
   return (
     <div>
       <h3>Players Stats</h3>
+      <span>{'Full name - PTS - REB - AST - Famous - Team name'}</span>
       {players.length > 0
         ? players.map(player => {
           const { fullName, score, teamName, assists, points, rebounds, imageLinks } = player
