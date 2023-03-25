@@ -1,8 +1,10 @@
 [![CircleCI](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main.svg?style=svg)](https://circleci.com/gh/lucastagliani/nba-info-react-ts/tree/main)
 
-## Live website in Heroku
+## Live website in ~Heroku~ OnRender
 
+https://basketball-game.onrender.com/ 
 https://nba-info-react-ts.herokuapp.com/ (it might be offline after November 28th given Heroku free plan will no longer exist).
+
 
 This app is automatically deployed using CircleCI each time the code gets pushed to GitHub.
 
