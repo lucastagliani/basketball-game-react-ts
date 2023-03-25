@@ -3,7 +3,7 @@ import { Question } from './types'
 
 const BASE_URL =
   process.env.REACT_APP_NODE_ENV === 'production'
-    ? 'https://nba-api-nodejs.herokuapp.com'
+    ? 'https://nba-api-nodejs.onrender.com'
     : 'http://localhost:8080'
 
 const useQuestionApi = () => {
