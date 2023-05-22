@@ -1,6 +1,8 @@
 [![CircleCI](https://circleci.com/gh/lucastagliani/basketball-game-react-ts/tree/main.svg?style=svg)](https://circleci.com/gh/lucastagliani/basketball-game-react-ts/tree/main)
 
-## Live website
+## Live website in ~Heroku~ OnRender
+
+https://basketball-game.onrender.com/
 
 [ONLINE] https://basketball-game.onrender.com/ (it might take some good seconds to load the first time given Render takes some time to "wake up" a service)
 [OFFLINE] https://basketball-game-react-ts.herokuapp.com/ (it might be offline after November 28th given Heroku free plan will no longer exist).
