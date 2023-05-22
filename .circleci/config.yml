@@ -3,7 +3,6 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.1
-  heroku: circleci/heroku@2.0.0
 
 workflows:
   app-workflow:
@@ -14,10 +13,3 @@ workflows:
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
-  heroku-deploy:
-    jobs:
-      - heroku/deploy-via-git:
-          app-name: 'basketball-game-react-ts'
-          filters:
-            branches:
-              only: main # only run deploy-via-git job on main branch
